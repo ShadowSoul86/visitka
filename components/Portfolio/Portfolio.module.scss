@@ -1,0 +1,27 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 60px;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    height: 529px;
+    grid-column: span 1;
+    border-radius: 15px;
+
+    &:first-child {
+      grid-column: span 2;
+    }
+
+    &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+      height: 734px;
+    } 
+
+    &:last-child {
+      grid-column: span 2;
+    }
+  }
+}
