@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import headerSlice from "./header/header.slice";
 import reviewsSlice from "./reviews/reviews.slice";
+import modalSlice from "./modal/modal.slice";
 
 export const store = configureStore({
   reducer: {
     header: headerSlice,
-    reviews: reviewsSlice
+    reviews: reviewsSlice,
+    modal: modalSlice
   },
 });
 

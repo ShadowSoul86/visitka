@@ -18,6 +18,7 @@ const config: Config = {
         "my-green": "#C5D86D",
         "my-white": "#FDFDFD",
         "my-light": "#F5F5F5",
+        "my-modal-line": "#8f8a8a",
         "my-grey": "#909090",
         "my-light-grey": "#E9E9E9",
         "my-slider": "rgba(38, 28, 21, 0.2)"

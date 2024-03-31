@@ -8,10 +8,13 @@ import Serve from "@/components/Serve/Serve";
 import BgImage from "@/public/img/mainBg.png";
 import Image from "next/image";
 
+import Modal from "@/components/Modals/Modal";
+
 export default function Home() {
   return (
     <div>
-      <div className="flex flex-col gap-[180px] w-full mx-auto max-w-[300px] phone:max-w-[400px] mini:max-w-[516px] md:max-w-[688px] pad:max-w-[910px] mac:max-w-[1386px] full:max-w-[1680px]">
+      <Modal />
+      <div className="min-h-screen flex flex-col gap-[180px] w-full mx-auto max-w-[300px] phone:max-w-[400px] mini:max-w-[516px] md:max-w-[688px] pad:max-w-[910px] mac:max-w-[1386px] full:max-w-[1680px]">
         <header className="pt-8 min-h-[416px] mini:min-h-[482px] md:min-h-[593px] pad:min-h-[900px] 2xl:min-h-[1080px]">
           <Header />
 
