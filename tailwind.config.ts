@@ -29,7 +29,10 @@ const config: Config = {
       screens: {
         phone: '420px',
         mini: '575px',
+        med: '700px',
+        medium: '767px',
         pad: '991px',
+        megapad: "1165px",
         mac: '1504px',
         full: '1920px'
       }

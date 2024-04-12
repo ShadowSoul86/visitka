@@ -11,8 +11,6 @@ import localFont from "next/font/local";
 
 const inter = Inter({ subsets: ["latin"] });
 
-import classes from "./Header.module.scss";
-
 const kurier = localFont({
   src: [
     {
@@ -49,58 +47,70 @@ const Header = () => {
           src={Logo}
           alt="logo"
         />
-        <nav className={classes.navbar}>
-          <ul
-            className={`flex gap-[48px] items-center text-white ${inter.className}`}
-          >
-            <li className={classes.navbar_list_item}>
-              <a href="">Обо мне</a>
-            </li>
-            <li className={classes.navbar_list_item}>
-              <a href="">Портфолио</a>
-            </li>
-            <li className={classes.navbar_list_item}>
-              <a href="">Услуги</a>
-            </li>
-            <li className={classes.navbar_list_item}>
-              <a href="">Запись</a>
-            </li>
-            <li className={classes.navbar_list_item}>
-              <a href="">Отзывы</a>
-            </li>
-            <li className={classes.navbar_list_item}>
-              <a href="">Контакты</a>
-            </li>
-          </ul>
-        </nav>
-        {/* <div onClick={() => dispatch(setIsOpened(!isOpended))} className={classes.menu}>
+
+        <div
+          onClick={() => dispatch(setIsOpened(!isOpended))}
+          className="block mac:hidden"
+        >
           {isOpended ? (
             <Image width={40} height={21} src={OpenedMenu} alt="menu" />
           ) : (
             <Image width={40} height={21} src={ClosedMenu} alt="menu" />
           )}
-        </div> */}
+        </div>
+
+        <nav className="hidden mac:block">
+          <ul
+            className={`flex gap-[48px] items-center text-white text-[16px] full:text-[18px] ${inter.className}`}
+          >
+            <li>
+              <a href="">Обо мне</a>
+            </li>
+            <li>
+              <a href="">Портфолио</a>
+            </li>
+            <li>
+              <a href="">Услуги</a>
+            </li>
+            <li>
+              <a href="">Запись</a>
+            </li>
+            <li>
+              <a href="">Отзывы</a>
+            </li>
+            <li>
+              <a href="">Контакты</a>
+            </li>
+          </ul>
+        </nav>
       </div>
 
       {/* content */}
       <div>
-        <h1 className={`mac:text-[148px] text-[178px] font-sans font-bold ${kurier.variable}`}>
-          <div className="text-left text-my-brown uppercase">Искусство</div>
-          <div className="text-right text-my-white uppercase">Волос</div>
+        <h1
+          className={`${kurier.variable} header-h1`}
+        >
+          <div className="text-left text-my-brown uppercase w-full max-w-[472px] pad:max-w-[827px] mac:max-w-[1249px]">
+            Искусство
+          </div>
+          <div className="mr-[7%] mini:mr-0 text-right text-my-white uppercase">
+            Волос
+          </div>
         </h1>
 
         <div
-          className={`${inter.className} mac:w-[546px] w-[708px] flex flex-col gap-[45px]`}
+          className={`${inter.className} header-content`}
         >
-          <div className="text-my-brown font-normal text-[28px] leading-[160%]">
+          <div className="header-text">
             Имя Фамилия откроет вам мир, где красота волос становится
             искусством.
           </div>
-          <div className="flex justify-between gap-[25px]">
-            <button className="mac:w-[259px] w-[377px] h-16 cursor-pointer bg-my-green border-none rounded-lg">
+
+          <div className="header-btns">
+            <button className="header-btn text-my-brown bg-my-green border-none ">
               Записаться
             </button>
-            <button className="mac:w-[259px] w-[377px] h-16 cursor-pointer border border-solid border-my-green rounded-lg">
+            <button className="header-btn text-my-grey border border-solid border-my-green ">
               Смотреть услуги
             </button>
           </div>

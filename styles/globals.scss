@@ -25,3 +25,73 @@ body {
     text-wrap: balance;
   }
 }
+
+@layer components {
+  .default-h2 {
+    @apply font-sans font-bold uppercase text-[35px] medium:text-[40px] pad:text-[48px] full:text-[58px];
+  }
+
+  .modal {
+    @apply relative bg-white px-[60px] pt-[45px] pb-[130px] rounded-[25px] shadow-md;
+  }
+
+  .modal-bg {
+    @apply fixed inset-0 flex items-center z-50 justify-center bg-black bg-opacity-50;
+  }
+
+  .body-main {
+    @apply flex flex-col w-full gap-[140px] mx-auto max-w-[90%] med:max-w-[600px] medium:max-w-[688px] pad:max-w-[910px] megapad:max-w-[1100px] mac:max-w-[90%] full:max-w-[1681px];
+  }
+
+  .bg-img {
+    @apply absolute top-0 right-0 z-[-1] w-[274px] h-[416px] med:w-[367px] med:h-[482px] pad:w-[482px] pad:h-[593px] megapad:w-[633px] megapad:h-[800px] mac:w-[733px] mac:h-[900px] full:w-[930px] full:h-[1080px];
+  }
+
+  .header {
+    @apply pt-8 min-h-[416px] mini:min-h-[482px] pad:min-h-[593px] megapad:min-h-[900px] 2xl:min-h-[1080px];
+  }
+
+  .header-h1 {
+    @apply font-sans font-bold text-[56px] medium:text-[75px] pad:text-[98px] mac:text-[148px] full:text-[178px];
+  }
+
+  .header-content {
+    @apply flex flex-col medium:gap-[22px] max-w-[252px] medium:max-w-[340px] pad:max-w-[444px] mac:max-w-[546px] full:max-w-[708px];
+  }
+
+  .header-btns {
+    @apply flex flex-col font-semibold gap-[18px] text-[16px] full:text-[20px] pad:flex-row pad:justify-between pad:gap-[25px];
+  }
+
+  .header-btn {
+    @apply w-full h-[53px] cursor-pointer rounded-lg max-w-[235px] medium:max-w-[254px] full:max-w-[337px] full:h-[64px];
+  }
+
+  .header-text {
+    @apply text-my-brown font-normal text-[16px] mac:text-[22px] full:text-[28px];
+  }
+
+  .about-text {
+    @apply mt-[18px] text-[16px] pad:text-[20px] mac:text-[22px] full:text-[28px]
+  }
+
+  .about-img {
+    @apply w-[222px] h-[293px] medium:w-[257px] medium:h-[340px] pad:w-[318px] pad:h-[420px] mac:w-[486px] mac:h-[570px]
+  }
+
+  .serve-li {
+    @apply block cursor-pointer bg-my-light-grey text-my-grey py-[5px] px-[28px];
+  }
+
+  .active-li {
+    @apply block cursor-pointer bg-my-green text-my-brown py-[5px] px-[28px];
+  }
+
+  .registry {
+    @apply bg-my-light rounded-[20px] flex flex-col w-full justify-center gap-[60px] py-[60px] px-[50px] medium:pl-[95px]
+  }
+
+  .footer-inner {
+    @apply w-full mx-auto max-w-[90%] medium:max-w-[688px] md:max-w-[688px] pad:max-w-[910px] megapad:max-w-[1100px] mac:max-w-[90%] full:max-w-[1680px];
+  }
+}

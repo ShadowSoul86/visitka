@@ -51,7 +51,7 @@ const Reviews: FC = () => {
   return (
     <div className="flex flex-col gap-[35px]">
       <h2
-        className={`${kurier.variable} font-sans font-bold uppercase text-[48px]`}
+        className={`${kurier.variable} default-h2`}
       >
         отзывы
       </h2>
@@ -60,21 +60,29 @@ const Reviews: FC = () => {
           <Carousel>
             {slides.map((s, i) => (
               <div className="min-w-full h-full flex justify-between" key={i}>
-                <div className="max-w-[740px] w-full flex flex-col gap-5">
+                <div className="w-full flex flex-col gap-5 max-w-[327px] pad:max-w-[442px] mac:max-w-[741px] full:max-w-[870px]">
                   <div className="flex flex-col gap-[5px]">
-                    <div className={`${inter.className} text-[20px]`}>{s.name}</div>
-                    <div className={`${inter.className} text-[20px] text-my-grey`}>{s.date}</div>
+                    <div className={`${inter.className}  text-[16px] pad:text-[18px] full:text-[20px]`}>
+                      {s.name}
+                    </div>
+                    <div
+                      className={`${inter.className}  text-[14px] pad:text-[16px] full:text-[18px] text-my-grey`}
+                    >
+                      {s.date}
+                    </div>
                   </div>
-                  <div className={`${inter.className} text-[28px]`}>{s.text}</div>
+                  <div className={`${inter.className} text-[18px] pad:text-[20px] mac:text-[22px] full:text-[28px]`}>
+                    {s.text}
+                  </div>
                 </div>
 
-                <div className="max-w-[652.5px] w-full">
+                <div className="w-[324px] pad:w-[435px] pad:h-[300px] mac:w-[580px] mac:h-[400px] full:w-[652px] full:h-[450px]">
                   <Image
-                    width={652}
-                    height={450}
+                    width={324}
+                    height={223}
                     src={s.img}
                     alt={s.alt}
-                    className="h-full max-w-[652px] object-cover"
+                    className="h-full w-full object-cover"
                   />
                 </div>
               </div>
@@ -85,7 +93,7 @@ const Reviews: FC = () => {
         <div className="flex items-center justify-between">
           <button
             onClick={tapPrev}
-            className={`${curr !== 0 ? "cursor-pointer" : "cursor-auto"}`}
+            className={`${curr !== 0 ? "cursor-pointer" : "cursor-auto"} outline-none`}
           >
             <svg
               width="15"
@@ -112,12 +120,12 @@ const Reviews: FC = () => {
               </defs>
             </svg>
           </button>
-          <div className="flex items-center justify-between gap-[63.5px]">
+          <div className="flex items-center justify-between gap-[20px]">
             {slides.map((_, i) => (
               <div
                 key={i}
                 className={`
-                transition-all w-[200px] mac:w-[165px] h-1 ${
+                transition-all w-[83px] mac:w-[165px] h-1 ${
                   curr === i ? "bg-my-green" : "bg-my-slider"
                 }
               `}

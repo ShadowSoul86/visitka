@@ -28,38 +28,19 @@ const inter = Inter({ subsets: ["latin"] });
 const Contacts = () => {
   return (
     <div
-      className={`${kurier.variable} font-sans flex justify-between items-center pt-[90px] pb-[60px]`}
+      className={`${kurier.variable} font-sans flex flex-col gap-[60px] pad:flex-row pad:justify-between pt-[50px] pb-[30px]`}
     >
-      <div className="max-w-[460px] w-full">
-        <h2 className="text-[30px] font-bold mb-[65px]">Контакты</h2>
-        <div
-          className={`${inter.className} flex justify-between items-center text-[20px] font-normal text-my-grey`}
-        >
-          <div>
-            <h3 className="font-[600] text-my-brown mb-3">Адрес</h3>
-            <div>ул. Ленина, 11, Самара</div>
-            <div>hello@gmail.com</div>
-            <div>+ 7 999 555 44 33</div>
-          </div>
-          <div>
-            <h3 className="font-[600] text-my-brown mb-3">Соцсети</h3>
-            <div><Link href={"#"}>Telegram</Link></div>
-            <div><Link href={"#"}>VK</Link></div>
-            <div><Link href={"#"}>Viber</Link></div>
-          </div>
-        </div>
-      </div>
-      <div className="max-w-[460px] w-full">
-        <h2 className="text-[30px] font-bold mb-[65px]">
-          Присоединяйтесь к нам
-        </h2>
-        <div className="flex flex-col gap-[25px]">
-          <div className="text-[20px] font-normal">
+      <div className="max-w-[366px] medium:max-w-[411px] w-full flex flex-col gap-[35px] pad:order-1">
+        <h2 className="text-[25px] full:text-[30px] font-bold">Присоединяйтесь к нам</h2>
+        <div className="flex flex-col gap-[15px]">
+          <div
+            className={`${inter.className} text-[16px] medium:text-[18px] font-normal`}
+          >
             Следите за нашими обновлениями в соцсетях
           </div>
-          <button className="w-[375px] h-[64px] bg-my-green border-none rounded-md text-[20px] font-semibold text-center">
+          <button className="w-[335px] h-[51px] bg-my-green border-none rounded-md text-[16px] font-semibold text-center">
             <Link
-              className="flex justify-center items-center gap-3 font-sans"
+              className="flex justify-center items-center gap-3 font-sans text-[16px]"
               href={"#"}
             >
               Присоединиться{" "}
@@ -85,6 +66,32 @@ const Contacts = () => {
               </svg>
             </Link>
           </button>
+        </div>
+      </div>
+
+      <div className="max-w-[366px] medium:max-w-[411px] w-full flex flex-col gap-[35px]">
+        <h2 className="text-[25px] full:text-[30px] font-bold">Контакты</h2>
+        <div
+          className={`${inter.className} flex justify-between items-center text-[18px] full:text-[20px] font-normal text-my-grey`}
+        >
+          <div>
+            <h3 className="font-[600] text-my-brown mb-3">Адрес</h3>
+            <div>ул. Ленина, 11, Самара</div>
+            <div>hello@gmail.com</div>
+            <div>+ 7 999 555 44 33</div>
+          </div>
+          <div>
+            <h3 className="font-[600] text-my-brown mb-3">Соцсети</h3>
+            <div>
+              <Link href={"#"}>Telegram</Link>
+            </div>
+            <div>
+              <Link href={"#"}>VK</Link>
+            </div>
+            <div>
+              <Link href={"#"}>Viber</Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -57,8 +57,8 @@ const Modal: FC<any> = () => {
   }, [isOpen]);
 
   return isOpen ? (
-    <div className="fixed inset-0 flex items-center z-50 justify-center bg-black bg-opacity-50">
-      <div className="relative bg-white px-[60px] pt-[45px] pb-[130px] rounded-[25px] shadow-md w-[1010px]">
+    <div className="modal-bg">
+      <div className="modal w-[468px] medium:w-[635px]">
         <button
           className="absolute z-50 top-0 right-[-50px]"
           onClick={handleCloseModal}
@@ -85,25 +85,25 @@ const Modal: FC<any> = () => {
           </svg>
         </button>
 
-        <div className="flex flex-col gap-[18px] max-w-[630px] text-center mx-auto">
+        <div className="flex flex-col gap-[18px] max-w-[407px] text-center mx-auto">
           <h2
-            className={`${kurier.variable} font-sans font-bold text-[48px] text-center`}
+            className={`${kurier.variable} font-sans font-bold text-[40px] text-center`}
           >
             {modalData?.title}
           </h2>
-          <div className={`${inter.className} text-[24px] text-my-brown`}>
+          <div className={`${inter.className} text-[16px] text-my-brown`}>
             {modalData?.descr}
           </div>
         </div>
 
-        <ul className="mt-[60px] mb-[80px]">
+        <ul className="mt-[40px] mb-[50px]">
           {modalData?.list?.map(({ title, text }, i) => {
             return (
-              <li className="flex flex-col gap-[25px]" key={i}>
+              <li className="flex flex-col gap-[15px]" key={i}>
                 <div className={`h-[1px] w-full bg-my-modal-line`} />
-                <div className={` ${inter.className} text-[20px] flex justify-between items-center`}>
+                <div className={` ${inter.className} text-[16px] flex justify-between items-center`}>
                   <div className="font-bold">{title}</div>
-                  <div className="max-w-[580px] w-full font-normal text-my-grey text-left">{text}</div>
+                  <div className="w-full font-normal text-my-grey text-left max-w-[265px] ">{text}</div>
                 </div>
                 <div
                   className={`${

@@ -44,35 +44,40 @@ const Serve = () => {
     {
       alias: "all",
       title: "Все",
+      active: true,
     },
     {
       alias: "care",
       title: "Уход",
+      active: false,
     },
     {
       alias: "staining",
       title: "окрашивание",
+      active: false,
     },
     {
       alias: "hairs",
       title: "причёски",
+      active: false,
     },
   ];
   return (
-    <div className="flex flex-col gap-[55px]">
-      <div className="w-full flex justify-between items-center">
+    <div className="flex flex-col gap-[46px]">
+      <div className="w-full flex flex-col gap-[18px] pad:flex-row pad:justify-between pad:items-center">
         <h2
-          className={`${kurier.variable} font-sans font-bold uppercase text-[48px] text-center`}
+          className={`${kurier.variable} default-h2 pad:text-center`}
         >
           Услуги
         </h2>
+
         <ul
-          className={`${inter.className} uppercase text-[18px] flex items-center`}
+          className={`${inter.className} uppercase text-[16px] flex items-center`}
         >
           {tabs.map((tab) => {
             return (
               <li
-                className="block cursor-pointer bg-my-light-grey text-my-grey py-[5px] px-[40px]"
+                className={`${tab.active ? "active-li" : "serve-li"} text-[16px] pad:text-[18px]`}
                 key={tab.alias}
               >
                 {tab.title}
@@ -98,7 +103,7 @@ const Serve = () => {
       </ul>
 
       <button
-        className={`${inter.className} w-full h-16 font-[600] text-[20px] text-my-grey text-center border rounded-lg border-my-grey`}
+        className={`${inter.className} w-full h-16 font-[600] text-[17px] full:text-[20px] text-my-grey text-center border rounded-lg border-my-grey`}
       >
         Смотреть ещё
       </button>
@@ -111,29 +116,30 @@ const Item = ({ data }: any) => {
   const { title, text, time, price } = data;
 
   return (
-    <div className="flex gap-[79px]">
+    <div className="flex justify-between">
       <h3
-        className={`${inter.className} text-[20px] font-[600] w-full max-w-[500px]`}
+        className={`${inter.className} text-[16px] pad:text-[18px] full:text-[20px] font-[700] w-full max-w-[183px]`}
       >
         {title}
       </h3>
-      <div className={`w-full flex justify-between`}>
-        <div className="flex flex-col gap-[6px]">
-          <div className={`${inter.className} text-[20px] text-my-grey`}>
+      
+      <div className={`w-full flex justify-between max-w-[317px] medium:max-w-[425px] pad:max-w-[594px] mac:max-w-[910px]`}>
+        <div className="flex flex-col gap-[6px] text-[16px] pad:text-[18px] full:text-[20px]">
+          <div className={`${inter.className} text-my-grey`}>
             {text}
           </div>
-          <div className={`${inter.className} text-[20px] text-my-grey`}>
+          <div className={`${inter.className} text-my-grey`}>
             {time}
           </div>
-          <div className={`${inter.className} text-[20px] text-my-brown`}>
+          <div className={`${inter.className} text-my-brown`}>
             {price}
           </div>
         </div>
 
         <div
-          className={`${inter.className} flex items-center gap-[12px] text-[18px] text-my-grey self-end`}
+          className={`${inter.className} flex items-center gap-[12px] text-[16px] full:text-[18px] text-my-grey self-end`}
         >
-          Записаться
+          <span className="hidden pad:inline">Записаться</span>
           <svg
             width="10"
             height="16"

@@ -27,24 +27,24 @@ const inter = Inter({ subsets: ["latin"] });
 
 const Registry = () => {
   return (
-    <div className="flex px-[150px] py-[80px] bg-my-light justify-between rounded-[20px]">
-      <div className="flex flex-col gap-[18px] max-w-[736px]">
+    <div className="flex flex-col registry mac:flex-row mac:justify-between">
+      <div className="flex flex-col gap-[18px] max-w-[365px] medium:max-w-[443px] pad:max-w-[720px] mac:max-w-[607px] full:max-w-[763px]">
         <h2
-          className={`${kurier.variable} font-sans font-bold uppercase text-[48px]`}
+          className={`${kurier.variable} default-h2`}
         >
           Запись
         </h2>
-        <div className={`${inter.className} text-[28px]`}>
+        <div className={`${inter.className} text-[16px] pad:text-[20px] mac:text-[22px] full:text-[28px]`}>
           Выберите удобный способ связи, и мы обсудим запись на окрашивание
           волос, учитывая ваши предпочтения.
         </div>
       </div>
 
-      <div className="flex items-center gap-10 self-end">
+      <div className="flex w-full max-w-[466px] items-center gap-10 mac:items-end">
         <Link href={"#"}>
           <svg
-            width="60"
-            height="60"
+            width="50"
+            height="50"
             viewBox="0 0 60 60"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -61,8 +61,8 @@ const Registry = () => {
         </Link>
         <Link href={"#"}>
           <svg
-            width="60"
-            height="60"
+            width="50"
+            height="50"
             viewBox="0 0 60 60"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -79,8 +79,8 @@ const Registry = () => {
         </Link>
         <Link href={"#"}>
           <svg
-            width="59"
-            height="60"
+            width="50"
+            height="50"
             viewBox="0 0 59 60"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -107,8 +107,8 @@ const Registry = () => {
         </Link>
         <Link href={"#"}>
           <svg
-            width="62"
-            height="60"
+            width="50"
+            height="50"
             viewBox="0 0 62 60"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -127,8 +127,8 @@ const Registry = () => {
         </Link>
         <Link href={"#"}>
           <svg
-            width="68"
-            height="54"
+            width="54"
+            height="43"
             viewBox="0 0 68 54"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

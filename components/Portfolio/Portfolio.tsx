@@ -44,7 +44,7 @@ const data = [
   },
   {
     image: thirdImg,
-    title: "Шатуш для перемен2",
+    title: "Шатуш для перемен2s",
     descr:
       "Элегантный шатуш с идеальными переходами, который подчеркивает индивидуальность клиента.",
     list: [
@@ -138,11 +138,13 @@ const Portfolio = () => {
     <div>
       <div className="mx-auto max-w-[1269px] mb-[60px]">
         <h2
-          className={`${kurier.variable} font-sans font-bold uppercase text-[48px] text-center`}
+          className={`${kurier.variable} default-h2 text-center`}
         >
           Портфолио
         </h2>
-        <div className={`${inter.className} text-[28px] mt-[22px] text-center`}>
+        <div
+          className={`${inter.className} mt-[18px] text-center text-[16px] pad:text-[20px] mac:text-[22px] full:text-[28px]`}
+        >
           Вдохновляйтесь моими работами! В этом разделе вы найдёте фотографии и
           истории успеха моих клиентов. От роскошных окрашенных прядей до
           здоровых и гладких волос после процедур ботокса — мои результаты
@@ -153,7 +155,7 @@ const Portfolio = () => {
         {data?.map((elem, i) => (
           <div
             key={i}
-            className={`${classes.grid__item} relative bg-cover bg-center h-screen`}
+            className={`${classes.grid__item} relative bg-cover bg-center min-h-[248px] medium:min-h-[331px]`}
             style={{
               backgroundImage: `url("${elem.image.src}")`,
             }}
@@ -169,7 +171,7 @@ const Portfolio = () => {
                 onClick={() => modalOpen(elem)}
                 className="flex items-center self-end gap-[12px] text-[18px] text-my-grey"
               >
-                Подробнее{" "}
+                <span className="pad:hidden mac:inline">Подробнее{" "}</span>
                 <svg
                   width="10"
                   height="16"

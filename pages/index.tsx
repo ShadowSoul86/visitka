@@ -9,17 +9,18 @@ import BgImage from "@/public/img/mainBg.png";
 import Image from "next/image";
 
 import Modal from "@/components/Modals/Modal";
+import Politics from "@/components/Politics/Politics";
 
 export default function Home() {
   return (
-    <div>
+    <div className="min-h-screen">
       <Modal />
-      <div className="min-h-screen flex flex-col gap-[180px] w-full mx-auto max-w-[300px] phone:max-w-[400px] mini:max-w-[516px] md:max-w-[688px] pad:max-w-[910px] mac:max-w-[1386px] full:max-w-[1680px]">
-        <header className="pt-8 min-h-[416px] mini:min-h-[482px] md:min-h-[593px] pad:min-h-[900px] 2xl:min-h-[1080px]">
+      <div className="body-main">
+        <header className="header">
           <Header />
 
           <Image
-            className="absolute top-0 right-0 z-[-1] w-[274px] h-[416px] mini:w-[367px] mini:h-[482px] md:w-[482px] md:h-[593px] pad:w-[733px] pad:h-[900px] 2xl:w-[930px] 2xl:h-[1080px]"
+            className="bg-img"
             width={274}
             height={416}
             src={BgImage}
@@ -27,18 +28,21 @@ export default function Home() {
           />
         </header>
 
-        <main className="flex flex-col gap-[180px]">
+        <main className="flex flex-col gap-[140px]">
           <About />
           <Portfolio />
           <Serve />
           <Registry />
-          <Reviews />
+          <div className="hidden medium:block">
+            <Reviews />
+          </div>
         </main>
       </div>
 
-      <footer className="bg-my-light mt-[180px]">
-        <div className="w-full mx-auto max-w-[300px] phone:max-w-[400px] mini:max-w-[516px] md:max-w-[688px] pad:max-w-[910px] mac:max-w-[1386px] full:max-w-[1680px]">
+      <footer className="bg-my-light mt-[140px]">
+        <div className="footer-inner">
           <Contacts />
+          <Politics />
         </div>
       </footer>
     </div>
