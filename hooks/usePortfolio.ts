@@ -5,8 +5,11 @@ import fourthImg from "@/public/img/portfolio/fourth.png";
 import fifthImg from "@/public/img/portfolio/fifth.png";
 import sixthImg from "@/public/img/portfolio/sixth.png";
 import seventhImg from "@/public/img/portfolio/seventh.png";
+import { useActions } from "@/redux/useActions";
 
 export const usePortfolio = () => {
+  const { openModal } = useActions();
+
   const data = [
     {
       image: firstImg,
@@ -99,6 +102,7 @@ export const usePortfolio = () => {
   ];
 
   return {
-    data
+    data,
+    openModal
   }
 }

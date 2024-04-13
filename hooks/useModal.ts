@@ -1,19 +1,16 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "./rtk";
-import { closeModal, selectModalOpen } from "@/redux/modal/modal.slice";
+import { useAppSelector } from "./rtk";
+import { useActions } from "@/redux/useActions";
 
 export const useModal = () => {
   const modalData = useAppSelector((s) => s.modal.data);
-  const dispatch = useAppDispatch();
-  const isOpen = useAppSelector(selectModalOpen);
+  const isOpen = useAppSelector((s) => s.modal.isOpen);
 
-  const handleCloseModal = () => {
-    dispatch(closeModal());
-  };
+  const { closeModal } = useActions();
 
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.key === "Escape") {
-      handleCloseModal();
+      closeModal();
     }
   };
 
@@ -32,7 +29,7 @@ export const useModal = () => {
 
   return {
     isOpen,
-    handleCloseModal,
+    closeModal,
     modalData,
-  }
-}
+  };
+};

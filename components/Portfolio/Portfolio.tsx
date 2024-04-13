@@ -1,16 +1,8 @@
 import classes from "./Portfolio.module.scss";
-import { useAppDispatch } from "@/hooks/rtk";
 import { usePortfolio } from "@/hooks/usePortfolio";
-import { openModal } from "@/redux/modal/modal.slice";
 
 const Portfolio = () => {
-  const dispatch = useAppDispatch();
-
-  const modalOpen = (elem: any) => {
-    dispatch(openModal(elem));
-  };
-
-  const { data } = usePortfolio();
+  const { data, openModal } = usePortfolio();
 
   return (
     <div>
@@ -42,7 +34,7 @@ const Portfolio = () => {
                 <div className="text-[30px]">Название</div>
               </div>
               <button
-                onClick={() => modalOpen(elem)}
+                onClick={() => openModal(elem)}
                 className="flex items-center self-end gap-[12px] text-[18px] text-my-grey"
               >
                 <span className="pad:hidden mac:inline">Подробнее </span>

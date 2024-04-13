@@ -19,6 +19,7 @@ export const headerSlice = createSlice({
   },
 });
 
-export const { setIsOpened } = headerSlice.actions;
-
-export default headerSlice.reducer;
+export const {
+  reducer: headerSliceReducer,
+  actions: headerSliceActions
+} = headerSlice

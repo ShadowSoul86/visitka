@@ -1,5 +1,5 @@
-import { useAppDispatch, useAppSelector } from "@/hooks/rtk";
-import { next } from "@/redux/reviews/reviews.slice";
+import { useAppSelector } from "@/hooks/rtk";
+import { useActions } from "@/redux/useActions";
 import { useEffect } from "react";
 
 const Carousel = ({
@@ -8,14 +8,11 @@ const Carousel = ({
   autoSlideinterval = 3000,
 }: any) => {
   const curr = useAppSelector((s) => s.reviews.curr);
-  const dispatch = useAppDispatch();
+  const { next } = useActions();
 
   useEffect(() => {
     if (!autoSlide) return;
-    const slideInterval = setInterval(
-      () => dispatch(next()),
-      autoSlideinterval
-    );
+    const slideInterval = setInterval(() => next(), autoSlideinterval);
     return () => clearInterval(slideInterval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

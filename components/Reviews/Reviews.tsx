@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FC } from "react";
-import Carousel from "../../utils/Carousel/Carousel";
 import { useReviews } from "@/hooks/useReviews";
+import Carousel from "./Carousel";
 
 const Reviews: FC = () => {
   const { curr, slides, tapNext, tapPrev } = useReviews();

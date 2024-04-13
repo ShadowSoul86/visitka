@@ -27,8 +27,7 @@ export const modalSlice = createSlice({
   },
 });
 
-export const { openModal, closeModal } = modalSlice.actions;
-
-export const selectModalOpen = (state: RootState) => state.modal.isOpen;
-
-export default modalSlice.reducer;
+export const {
+  reducer: modalSliceReducer,
+  actions: modalSliceActions
+} = modalSlice

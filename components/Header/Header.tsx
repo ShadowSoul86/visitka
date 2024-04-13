@@ -2,12 +2,10 @@ import Image from "next/image";
 import Logo from "@/public/img/logo.svg";
 import ClosedMenu from "@/public/img/menu.svg";
 import OpenedMenu from "@/public/img/closemenu.svg";
-import { useAppDispatch, useAppSelector } from "@/hooks/rtk";
-import { setIsOpened } from "@/redux/header/header.slice";
+import { useHeader } from "@/hooks/useHeader";
 
 const Header = () => {
-  const isOpended = useAppSelector((s) => s.header.isOpended);
-  const dispatch = useAppDispatch();
+  const { isOpended, setIsOpened } = useHeader();
 
   return (
     <div>
@@ -22,7 +20,7 @@ const Header = () => {
         />
 
         <div
-          onClick={() => dispatch(setIsOpened(!isOpended))}
+          onClick={() => setIsOpened(!isOpended)}
           className="block mac:hidden"
         >
           {isOpended ? (
@@ -60,9 +58,7 @@ const Header = () => {
 
       {/* content */}
       <div>
-        <h1
-          className={`font-sans header-h1`}
-        >
+        <h1 className={`font-sans header-h1`}>
           <div className="text-left text-my-brown uppercase w-full max-w-[472px] pad:max-w-[827px] mac:max-w-[1249px]">
             Искусство
           </div>
@@ -71,9 +67,7 @@ const Header = () => {
           </div>
         </h1>
 
-        <div
-          className={`header-content`}
-        >
+        <div className={`header-content`}>
           <div className="header-text">
             Имя Фамилия откроет вам мир, где красота волос становится
             искусством.

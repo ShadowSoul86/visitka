@@ -2,14 +2,14 @@ import { useModal } from "@/hooks/useModal";
 import { FC } from "react";
 
 const Modal: FC<any> = () => {
-  const { isOpen, handleCloseModal, modalData } = useModal();
+  const { isOpen, closeModal, modalData } = useModal();
 
   return isOpen ? (
     <div className="modal-bg">
       <div className="modal w-[468px] medium:w-[635px]">
         <button
           className="absolute z-50 top-0 right-[-50px]"
-          onClick={handleCloseModal}
+          onClick={() => closeModal()}
         >
           <svg
             width="34"
