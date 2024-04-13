@@ -40,7 +40,7 @@ const Modal: FC<any> = () => {
           </svg>
         </button>
 
-        <div className="overflow-y-auto max-h-[700px] scrollbar-hide">
+        <div className="overflow-y-auto max-h-[700px] full:max-h-[1100px] scrollbar-hide">
           <div className="flex flex-col gap-[18px] text-center mx-auto max-w-[407px] medium:max-w-[532px] mac:max-w-[569px] full:max-w-[630px]">
             <h2
               className={`font-sans font-bold text-center text-[40px] medium:text-[48px]`}
