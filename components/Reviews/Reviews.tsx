@@ -1,25 +1,10 @@
 import Image from "next/image";
 import { FC } from "react";
-import Carousel from "./Carousel";
-import { useAppDispatch, useAppSelector } from "@/hooks/rtk";
-import { next, prev } from "@/redux/reviews/reviews.slice";
+import Carousel from "../../utils/Carousel/Carousel";
+import { useReviews } from "@/hooks/useReviews";
 
 const Reviews: FC = () => {
-  const slides = useAppSelector((s) => s.reviews.slides);
-  const dispatch = useAppDispatch();
-
-  const curr = useAppSelector((s) => s.reviews.curr);
-
-  const tapNext = () => {
-    if (curr !== slides.length - 1) {
-      dispatch(next());
-    }
-  };
-  const tapPrev = () => {
-    if (curr !== 0) {
-      dispatch(prev());
-    }
-  };
+  const { curr, slides, tapNext, tapPrev } = useReviews();
 
   return (
     <div className="flex flex-col gap-[35px]">

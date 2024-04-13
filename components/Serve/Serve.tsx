@@ -1,4 +1,6 @@
+import { useAppDispatch, useAppSelector } from "@/hooks/rtk";
 import Item from "./Item";
+import { setActiveTab } from "@/redux/serve/serve.slice";
 
 const mockData = [
   {
@@ -16,41 +18,22 @@ const mockData = [
 ];
 
 const Serve = () => {
-  const tabs = [
-    {
-      alias: "all",
-      title: "Все",
-      active: true,
-    },
-    {
-      alias: "care",
-      title: "Уход",
-      active: false,
-    },
-    {
-      alias: "staining",
-      title: "окрашивание",
-      active: false,
-    },
-    {
-      alias: "hairs",
-      title: "причёски",
-      active: false,
-    },
-  ];
+  const tabs = useAppSelector((s) => s.serve.tabs);
+  const activeTab = useAppSelector((s) => s.serve.activeTab);
+  const dispatch = useAppDispatch();
+
   return (
     <div className="flex flex-col gap-[46px]">
       <div className="w-full flex flex-col gap-[18px] pad:flex-row pad:justify-between pad:items-center">
-        <h2 className={`font-sans default-h2 pad:text-center`}>
-          Услуги
-        </h2>
+        <h2 className={`font-sans default-h2 pad:text-center`}>Услуги</h2>
 
         <ul className={`uppercase text-[16px] flex items-center`}>
           {tabs.map((tab) => {
             return (
               <li
+                onClick={() => dispatch(setActiveTab(tab.alias))}
                 className={`${
-                  tab.active ? "active-li" : "serve-li"
+                  tab.alias === activeTab ? "active-li" : "serve-li"
                 } text-[16px] pad:text-[18px]`}
                 key={tab.alias}
               >

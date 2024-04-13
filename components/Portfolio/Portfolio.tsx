@@ -1,105 +1,7 @@
 import classes from "./Portfolio.module.scss";
-
-import firstImg from "@/public/img/portfolio/first.png";
-import secondImg from "@/public/img/portfolio/second.png";
-import thirdImg from "@/public/img/portfolio/third.png";
-import fourthImg from "@/public/img/portfolio/fourth.png";
-import fifthImg from "@/public/img/portfolio/fifth.png";
-import sixthImg from "@/public/img/portfolio/sixth.png";
-import seventhImg from "@/public/img/portfolio/seventh.png";
 import { useAppDispatch } from "@/hooks/rtk";
+import { usePortfolio } from "@/hooks/usePortfolio";
 import { openModal } from "@/redux/modal/modal.slice";
-
-const data = [
-  {
-    image: firstImg,
-    title: "Шатуш для перемен1",
-    descr:
-      "Элегантный шатуш с идеальными переходами, который подчеркивает индивидуальность клиента.",
-    list: [
-      {
-        title: "Цель",
-        text: "Создать стильный и утонченный образ с использованием техники шатуш.",
-      },
-      {
-        title: "Задачи",
-        text: "Осветление волос, создание мягких переходов.",
-      },
-    ],
-  },
-  {
-    image: secondImg,
-    title: "Шатуш для перемен2",
-    descr:
-      "Элегантный шатуш с идеальными переходами, который подчеркивает индивидуальность клиента.",
-    list: [
-      {
-        title: "Цель",
-        text: "Создать стильный и утонченный образ с использованием техники шатуш.",
-      },
-    ],
-  },
-  {
-    image: thirdImg,
-    title: "Шатуш для перемен2s",
-    descr:
-      "Элегантный шатуш с идеальными переходами, который подчеркивает индивидуальность клиента.",
-    list: [
-      {
-        title: "Цель",
-        text: "Создать стильный и утонченный образ с использованием техники шатуш.",
-      },
-    ],
-  },
-  {
-    image: fourthImg,
-    title: "Шатуш для перемен3",
-    descr:
-      "Элегантный шатуш с идеальными переходами, который подчеркивает индивидуальность клиента.",
-    list: [
-      {
-        title: "Цель",
-        text: "Создать стильный и утонченный образ с использованием техники шатуш.",
-      },
-    ],
-  },
-  {
-    image: fifthImg,
-    title: "Шатуш для перемен4",
-    descr:
-      "Элегантный шатуш с идеальными переходами, который подчеркивает индивидуальность клиента.",
-    list: [
-      {
-        title: "Цель",
-        text: "Создать стильный и утонченный образ с использованием техники шатуш.",
-      },
-    ],
-  },
-  {
-    image: sixthImg,
-    title: "Шатуш для перемен5",
-    descr:
-      "Элегантный шатуш с идеальными переходами, который подчеркивает индивидуальность клиента.",
-    list: [
-      {
-        title: "Цель",
-        text: "Создать стильный и утонченный образ с использованием техники шатуш.",
-      },
-    ],
-  },
-  {
-    image: seventhImg,
-    title: "Шатуш для перемен6",
-    descr:
-      "Элегантный шатуш с идеальными переходами, который подчеркивает индивидуальность клиента.",
-    list: [
-      {
-        title: "Цель",
-        text: "Создать стильный и утонченный образ с использованием техники шатуш.",
-      },
-    ],
-  },
-];
 
 const Portfolio = () => {
   const dispatch = useAppDispatch();
@@ -108,14 +10,12 @@ const Portfolio = () => {
     dispatch(openModal(elem));
   };
 
+  const { data } = usePortfolio();
+
   return (
     <div>
       <div className="mx-auto max-w-[1269px] mb-[60px]">
-        <h2
-          className={`font-sans default-h2 text-center`}
-        >
-          Портфолио
-        </h2>
+        <h2 className={`font-sans default-h2 text-center`}>Портфолио</h2>
         <div
           className={`mt-[18px] text-center text-[16px] pad:text-[20px] mac:text-[22px] full:text-[28px]`}
         >
@@ -145,7 +45,7 @@ const Portfolio = () => {
                 onClick={() => modalOpen(elem)}
                 className="flex items-center self-end gap-[12px] text-[18px] text-my-grey"
               >
-                <span className="pad:hidden mac:inline">Подробнее{" "}</span>
+                <span className="pad:hidden mac:inline">Подробнее </span>
                 <svg
                   width="10"
                   height="16"
