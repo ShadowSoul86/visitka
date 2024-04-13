@@ -1,10 +1,6 @@
 import { useActions } from "@/redux/useActions";
-import { useAppSelector } from "./rtk";
 
-export const useReviews = () => {
-  const slides = useAppSelector((s) => s.reviews.slides);
-  const curr = useAppSelector((s) => s.reviews.curr);
-
+export const useSlides = (slides: any, curr: any) => {
   const { next, prev } = useActions();
 
   const tapNext = () => {

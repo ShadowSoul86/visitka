@@ -1,17 +1,21 @@
 import Image from "next/image";
 import { FC } from "react";
-import { useReviews } from "@/hooks/useReviews";
-import Carousel from "./Carousel";
+import { useSlides } from "@/hooks/useSlides";
+import Carousel from "../utils/Carousel";
+import { useAppSelector } from "@/hooks/rtk";
 
 const Reviews: FC = () => {
-  const { curr, slides, tapNext, tapPrev } = useReviews();
+  const slides = useAppSelector((s) => s.slide.slides);
+  const curr = useAppSelector((s) => s.slide.curr);
+
+  const { tapNext, tapPrev } = useSlides(slides, curr);
 
   return (
     <div className="flex flex-col gap-[35px]">
       <h2 id="reviews" className={`font-sans default-h2`}>отзывы</h2>
       <div className="flex flex-col gap-[45px]">
         <div>
-          <Carousel>
+          <Carousel curr={curr}>
             {slides.map((s, i) => (
               <div className="min-w-full h-full flex justify-between" key={i}>
                 <div className="w-full flex flex-col gap-5 max-w-[327px] pad:max-w-[442px] mac:max-w-[741px] full:max-w-[870px]">

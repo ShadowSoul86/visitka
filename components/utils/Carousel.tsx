@@ -1,13 +1,12 @@
-import { useAppSelector } from "@/hooks/rtk";
 import { useActions } from "@/redux/useActions";
 import { useEffect } from "react";
 
 const Carousel = ({
+  curr,
   children: slides,
   autoSlide = false,
   autoSlideinterval = 3000,
 }: any) => {
-  const curr = useAppSelector((s) => s.reviews.curr);
   const { next } = useActions();
 
   useEffect(() => {

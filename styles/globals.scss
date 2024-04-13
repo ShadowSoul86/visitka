@@ -20,6 +20,15 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Для Internet Explorer и Edge */
+  scrollbar-width: none;  /* Для Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Для Chrome, Safari и Opera */
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -32,7 +41,7 @@ body {
   }
 
   .modal {
-    @apply relative bg-white px-[33px] medium:px-[25px] pad:px-[40px] mac:px-[50px] pt-[45px] pb-[130px] rounded-[25px] shadow-md;
+    @apply relative bg-white px-[33px] medium:px-[25px] pad:px-[40px] mac:px-[50px] pt-[45px] pb-[34px] rounded-[25px] shadow-md;
   }
 
   .modal-bg {

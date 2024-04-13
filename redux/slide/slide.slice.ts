@@ -1,18 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { mockReviewsSlides } from "./reviews.const";
 
-export interface reviewsState {
+export interface slideState {
   curr: number;
   slides: any[];
 }
 
-const initialState: reviewsState = {
+const initialState: slideState = {
   curr: 0,
   slides: mockReviewsSlides,
 };
 
-export const reviewsSlice = createSlice({
-  name: "reviews",
+export const slideSlice = createSlice({
+  name: "slide",
   initialState,
   reducers: {
     next: (state) => {
@@ -26,6 +26,6 @@ export const reviewsSlice = createSlice({
 
 
 export const {
-  reducer: reviewsSliceReducer,
-  actions: reviewsSliceActions
-} = reviewsSlice
+  reducer: slideSliceReducer,
+  actions: slideSliceActions
+} = slideSlice
