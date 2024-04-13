@@ -43,6 +43,9 @@ const Menu = () => {
                 <li>
                   <a href="#registry">Запись</a>
                 </li>
+                <li className="hidden medium:block">
+                  <a href="#reviews">Отзывы</a>
+                </li>
                 <li>
                   <a href="#contacts">Контакты</a>
                 </li>

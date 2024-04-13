@@ -44,7 +44,7 @@ body {
   }
 
   .mobile-menu {
-    @apply absolute top-0 right-0 w-[275px] h-[512px] bg-white pt-[41px] pl-[60px]
+    @apply absolute top-0 right-0 bg-white pt-[41px] pl-[60px] w-[275px] h-[512px] medium:w-[368px] medium:h-[582px] pad:w-[483px] pad:h-[592px]
   }
 
   .body-main {
