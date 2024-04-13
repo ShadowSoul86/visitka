@@ -1,5 +1,4 @@
 import localFont from "next/font/local";
-import { Inter } from "next/font/google";
 import Link from "next/link";
 
 const kurier = localFont({
@@ -23,19 +22,19 @@ const kurier = localFont({
   variable: "--font-kurier",
 });
 
-const inter = Inter({ subsets: ["latin"] });
-
 const Contacts = () => {
   return (
     <div
-      className={`${kurier.variable} font-sans flex flex-col gap-[60px] pad:flex-row pad:justify-between pt-[50px] pb-[30px]`}
+      className={`flex flex-col gap-[60px] pad:flex-row pad:justify-between pt-[50px] pb-[30px]`}
     >
       <div className="max-w-[366px] medium:max-w-[411px] w-full flex flex-col gap-[35px] pad:order-1">
-        <h2 className="text-[25px] full:text-[30px] font-bold">Присоединяйтесь к нам</h2>
+        <h2
+          className={`text-[25px] full:text-[30px] font-bold ${kurier.variable} font-sans`}
+        >
+          Присоединяйтесь к нам
+        </h2>
         <div className="flex flex-col gap-[15px]">
-          <div
-            className={`${inter.className} text-[16px] medium:text-[18px] font-normal`}
-          >
+          <div className={`text-[16px] medium:text-[18px] font-normal`}>
             Следите за нашими обновлениями в соцсетях
           </div>
           <button className="w-[335px] h-[51px] bg-my-green border-none rounded-md text-[16px] font-semibold text-center">
@@ -70,9 +69,13 @@ const Contacts = () => {
       </div>
 
       <div className="max-w-[366px] medium:max-w-[411px] w-full flex flex-col gap-[35px]">
-        <h2 className="text-[25px] full:text-[30px] font-bold">Контакты</h2>
+        <h2
+          className={`text-[25px] full:text-[30px] font-bold ${kurier.variable} font-sans`}
+        >
+          Контакты
+        </h2>
         <div
-          className={`${inter.className} flex justify-between items-center text-[18px] full:text-[20px] font-normal text-my-grey`}
+          className={`flex justify-between items-center text-[18px] full:text-[20px] font-normal text-my-grey`}
         >
           <div>
             <h3 className="font-[600] text-my-brown mb-3">Адрес</h3>

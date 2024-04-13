@@ -11,9 +11,13 @@ import Image from "next/image";
 import Modal from "@/components/Modals/Modal";
 import Politics from "@/components/Politics/Politics";
 
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
+
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div style={inter.style} className="min-h-screen">
       <Modal />
       <div className="body-main">
         <header className="header">

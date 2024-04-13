@@ -5,11 +5,7 @@ import ClosedMenu from "@/public/img/menu.svg";
 import OpenedMenu from "@/public/img/closemenu.svg";
 import { useAppDispatch, useAppSelector } from "@/hooks/rtk";
 import { setIsOpened } from "@/redux/header/header.slice";
-
-import { Inter } from "next/font/google";
 import localFont from "next/font/local";
-
-const inter = Inter({ subsets: ["latin"] });
 
 const kurier = localFont({
   src: [
@@ -37,7 +33,7 @@ const Header = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className={`${kurier.variable}`}>
+    <div>
       {/* navigation */}
       <div className="flex justify-between font-sans items-center">
         <Image
@@ -61,7 +57,7 @@ const Header = () => {
 
         <nav className="hidden mac:block">
           <ul
-            className={`flex gap-[48px] items-center text-white text-[16px] full:text-[18px] ${inter.className}`}
+            className={`flex gap-[48px] items-center text-white text-[16px] full:text-[18px]`}
           >
             <li>
               <a href="">Обо мне</a>
@@ -99,7 +95,7 @@ const Header = () => {
         </h1>
 
         <div
-          className={`${inter.className} header-content`}
+          className={`header-content`}
         >
           <div className="header-text">
             Имя Фамилия откроет вам мир, где красота волос становится

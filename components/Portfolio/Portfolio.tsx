@@ -1,5 +1,4 @@
 import localFont from "next/font/local";
-import { Inter } from "next/font/google";
 
 import classes from "./Portfolio.module.scss";
 
@@ -125,8 +124,6 @@ const kurier = localFont({
   variable: "--font-kurier",
 });
 
-const inter = Inter({ subsets: ["latin"] });
-
 const Portfolio = () => {
   const dispatch = useAppDispatch();
 
@@ -143,7 +140,7 @@ const Portfolio = () => {
           Портфолио
         </h2>
         <div
-          className={`${inter.className} mt-[18px] text-center text-[16px] pad:text-[20px] mac:text-[22px] full:text-[28px]`}
+          className={`mt-[18px] text-center text-[16px] pad:text-[20px] mac:text-[22px] full:text-[28px]`}
         >
           Вдохновляйтесь моими работами! В этом разделе вы найдёте фотографии и
           истории успеха моих клиентов. От роскошных окрашенных прядей до
@@ -161,7 +158,7 @@ const Portfolio = () => {
             }}
           >
             <div
-              className={`${inter.className} absolute px-[30px] w-full flex justify-between bottom-[30px]`}
+              className={`absolute px-[30px] w-full flex justify-between bottom-[30px]`}
             >
               <div className="flex flex-col gap-[6px] text-my-white font-normal">
                 <div className="uppercase text-[10px]">окрашивание</div>

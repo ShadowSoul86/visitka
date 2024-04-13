@@ -1,4 +1,3 @@
-import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import Link from "next/link";
 
@@ -23,8 +22,6 @@ const kurier = localFont({
   variable: "--font-kurier",
 });
 
-const inter = Inter({ subsets: ["latin"] });
-
 const Registry = () => {
   return (
     <div className="flex flex-col registry mac:flex-row mac:justify-between">
@@ -34,7 +31,7 @@ const Registry = () => {
         >
           Запись
         </h2>
-        <div className={`${inter.className} text-[16px] pad:text-[20px] mac:text-[22px] full:text-[28px]`}>
+        <div className={`text-[16px] pad:text-[20px] mac:text-[22px] full:text-[28px]`}>
           Выберите удобный способ связи, и мы обсудим запись на окрашивание
           волос, учитывая ваши предпочтения.
         </div>

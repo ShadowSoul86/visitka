@@ -1,7 +1,6 @@
 import Image from "next/image";
 import mainPhoto from "@/public/img/mainPhoto.png";
 import localFont from "next/font/local";
-import { Inter } from "next/font/google";
 
 const kurier = localFont({
   src: [
@@ -24,8 +23,6 @@ const kurier = localFont({
   variable: "--font-kurier",
 });
 
-const inter = Inter({ subsets: ["latin"] });
-
 const About = () => {
   return (
     <div className="w-full flex justify-between">
@@ -36,7 +33,7 @@ const About = () => {
           Обо мне
         </h2>
         <div
-          className={`${inter.className} about-text`}
+          className={`about-text`}
         >
           Меня зовут Алёна, и я являюсь профессиональным стилистом,
           специализирующимся на самых сложных и инновационных методах ухода

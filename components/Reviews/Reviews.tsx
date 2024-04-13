@@ -1,11 +1,9 @@
 import Image from "next/image";
 import { FC } from "react";
 import Carousel from "./Carousel";
-import { ChevronLeft, ChevronRight } from "react-feather";
 import { useAppDispatch, useAppSelector } from "@/hooks/rtk";
 import { next, prev } from "@/redux/reviews/reviews.slice";
 
-import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 
 const kurier = localFont({
@@ -29,8 +27,6 @@ const kurier = localFont({
   variable: "--font-kurier",
 });
 
-const inter = Inter({ subsets: ["latin"] });
-
 const Reviews: FC = () => {
   const slides = useAppSelector((s) => s.reviews.slides);
   const dispatch = useAppDispatch();
@@ -50,11 +46,7 @@ const Reviews: FC = () => {
 
   return (
     <div className="flex flex-col gap-[35px]">
-      <h2
-        className={`${kurier.variable} default-h2`}
-      >
-        отзывы
-      </h2>
+      <h2 className={`${kurier.variable} default-h2`}>отзывы</h2>
       <div className="flex flex-col gap-[45px]">
         <div>
           <Carousel>
@@ -62,16 +54,20 @@ const Reviews: FC = () => {
               <div className="min-w-full h-full flex justify-between" key={i}>
                 <div className="w-full flex flex-col gap-5 max-w-[327px] pad:max-w-[442px] mac:max-w-[741px] full:max-w-[870px]">
                   <div className="flex flex-col gap-[5px]">
-                    <div className={`${inter.className}  text-[16px] pad:text-[18px] full:text-[20px]`}>
+                    <div
+                      className={`text-[16px] pad:text-[18px] full:text-[20px]`}
+                    >
                       {s.name}
                     </div>
                     <div
-                      className={`${inter.className}  text-[14px] pad:text-[16px] full:text-[18px] text-my-grey`}
+                      className={`text-[14px] pad:text-[16px] full:text-[18px] text-my-grey`}
                     >
                       {s.date}
                     </div>
                   </div>
-                  <div className={`${inter.className} text-[18px] pad:text-[20px] mac:text-[22px] full:text-[28px]`}>
+                  <div
+                    className={`text-[18px] pad:text-[20px] mac:text-[22px] full:text-[28px]`}
+                  >
                     {s.text}
                   </div>
                 </div>
@@ -93,7 +89,9 @@ const Reviews: FC = () => {
         <div className="flex items-center justify-between">
           <button
             onClick={tapPrev}
-            className={`${curr !== 0 ? "cursor-pointer" : "cursor-auto"} outline-none`}
+            className={`${
+              curr !== 0 ? "cursor-pointer" : "cursor-auto"
+            } outline-none`}
           >
             <svg
               width="15"
