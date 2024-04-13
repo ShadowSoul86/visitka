@@ -1,26 +1,8 @@
-import { useAppDispatch, useAppSelector } from "@/hooks/rtk";
 import Item from "./Item";
-import { setActiveTab } from "@/redux/serve/serve.slice";
-
-const mockData = [
-  {
-    title: "Все",
-    text: "Создание уникальных и глубоких оттенков для ваших волос. Противопоказания.",
-    time: "2-3 hours",
-    price: "3000",
-  },
-  {
-    title: "Уход",
-    text: "Создание уникальных и глубоких оттенков для ваших волос. Противопоказания.",
-    time: "2-3 hours",
-    price: "3000",
-  },
-];
+import { useServe } from "@/hooks/useServe";
 
 const Serve = () => {
-  const tabs = useAppSelector((s) => s.serve.tabs);
-  const activeTab = useAppSelector((s) => s.serve.activeTab);
-  const dispatch = useAppDispatch();
+  const { tabs, activeTab, setActiveTab, data } = useServe();
 
   return (
     <div className="flex flex-col gap-[46px]">
@@ -31,7 +13,7 @@ const Serve = () => {
           {tabs.map((tab) => {
             return (
               <li
-                onClick={() => dispatch(setActiveTab(tab.alias))}
+                onClick={() => setActiveTab(tab.alias)}
                 className={`${
                   tab.alias === activeTab ? "active-li" : "serve-li"
                 } text-[16px] pad:text-[18px]`}
@@ -45,12 +27,12 @@ const Serve = () => {
       </div>
 
       <ul className="flex flex-col gap-[25px]">
-        {mockData.map((elem, i) => {
+        {data?.map((elem, i) => {
           return (
             <div className="flex flex-col gap-[25px]" key={i}>
               <div className="w-full h-[1px] bg-my-grey"></div>
               <Item key={i} data={elem} />
-              {i !== mockData.length - 1 && (
+              {i !== data.length - 1 && (
                 <div className="w-full h-[1px] bg-my-grey"></div>
               )}
             </div>

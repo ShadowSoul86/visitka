@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { tabs } from "./serve.const";
+import { mockData, tabs } from "./serve.const";
 
 export interface serveTab {
   alias: string;
@@ -10,11 +10,13 @@ export interface serveTab {
 export interface serveState {
   tabs: serveTab[];
   activeTab: string;
+  data: any[]
 }
 
 const initialState: serveState = {
   tabs,
   activeTab: "all",
+  data: mockData,
 };
 
 export const serveSlice = createSlice({
@@ -27,6 +29,7 @@ export const serveSlice = createSlice({
   },
 });
 
-export const { setActiveTab } = serveSlice.actions;
-
-export default serveSlice.reducer;
+export const {
+  reducer: serveSliceReducer,
+  actions: serveSliceActions
+} = serveSlice
