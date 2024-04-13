@@ -8,7 +8,7 @@ const Reviews: FC = () => {
 
   return (
     <div className="flex flex-col gap-[35px]">
-      <h2 className={`font-sans default-h2`}>отзывы</h2>
+      <h2 id="reviews" className={`font-sans default-h2`}>отзывы</h2>
       <div className="flex flex-col gap-[45px]">
         <div>
           <Carousel>

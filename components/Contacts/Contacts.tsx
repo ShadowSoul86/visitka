@@ -48,6 +48,7 @@ const Contacts = () => {
 
       <div className="max-w-[366px] medium:max-w-[411px] w-full flex flex-col gap-[35px]">
         <h2
+          id="contacts"
           className={`text-[25px] full:text-[30px] font-bold font-sans`}
         >
           Контакты

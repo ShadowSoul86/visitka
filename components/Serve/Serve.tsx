@@ -7,7 +7,7 @@ const Serve = () => {
   return (
     <div className="flex flex-col gap-[46px]">
       <div className="w-full flex flex-col gap-[18px] pad:flex-row pad:justify-between pad:items-center">
-        <h2 className={`font-sans default-h2 pad:text-center`}>Услуги</h2>
+        <h2 id="serve" className={`font-sans default-h2 pad:text-center`}>Услуги</h2>
 
         <ul className={`uppercase text-[16px] flex items-center`}>
           {tabs.map((tab) => {

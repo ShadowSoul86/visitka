@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Registry = () => {
   return (
-    <div className="flex flex-col registry mac:flex-row mac:justify-between">
+    <div id="registry" className="flex flex-col registry mac:flex-row mac:justify-between">
       <div className="flex flex-col gap-[18px] max-w-[365px] medium:max-w-[443px] pad:max-w-[720px] mac:max-w-[607px] full:max-w-[763px]">
         <h2
           className={`font-sans default-h2`}

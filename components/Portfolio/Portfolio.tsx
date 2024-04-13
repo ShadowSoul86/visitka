@@ -7,7 +7,7 @@ const Portfolio = () => {
   return (
     <div>
       <div className="mx-auto max-w-[1269px] mb-[60px]">
-        <h2 className={`font-sans default-h2 text-center`}>Портфолио</h2>
+        <h2 id="portfolio" className={`font-sans default-h2 text-center`}>Портфолио</h2>
         <div
           className={`mt-[18px] text-center text-[16px] pad:text-[20px] mac:text-[22px] full:text-[28px]`}
         >

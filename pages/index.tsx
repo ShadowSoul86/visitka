@@ -44,7 +44,7 @@ export default function Home() {
       className={`${kurier.variable} font-sans min-h-screen`}
     >
       <Modal />
-      <div className="body-main">
+      <div className={`body-main`}>
         <header className="header">
           <Header />
 

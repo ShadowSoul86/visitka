@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useAppSelector } from "./rtk";
 import { useActions } from "@/redux/useActions";
 

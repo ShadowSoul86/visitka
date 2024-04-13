@@ -6,6 +6,7 @@ const About = () => {
     <div className="w-full flex justify-between">
       <div className="max-w-[260px] medium:max-w-[386px] pad:max-w-[467px] megapad:max-w-[600px] mac:max-w-[772px]">
         <h2
+          id="about"
           className={`font-sans default-h2`}
         >
           Обо мне

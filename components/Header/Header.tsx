@@ -1,12 +1,9 @@
 import Image from "next/image";
 import Logo from "@/public/img/logo.svg";
-import ClosedMenu from "@/public/img/menu.svg";
-import OpenedMenu from "@/public/img/closemenu.svg";
 import { useHeader } from "@/hooks/useHeader";
+import Menu from "./Menu";
 
 const Header = () => {
-  const { isOpended, setIsOpened } = useHeader();
-
   return (
     <div>
       {/* navigation */}
@@ -19,38 +16,29 @@ const Header = () => {
           alt="logo"
         />
 
-        <div
-          onClick={() => setIsOpened(!isOpended)}
-          className="block mac:hidden"
-        >
-          {isOpended ? (
-            <Image width={40} height={21} src={OpenedMenu} alt="menu" />
-          ) : (
-            <Image width={40} height={21} src={ClosedMenu} alt="menu" />
-          )}
-        </div>
+        <Menu />
 
-        <nav className="hidden mac:block">
+        <nav className="hidden mac:flex">
           <ul
             className={`flex gap-[48px] items-center text-white text-[16px] full:text-[18px]`}
           >
             <li>
-              <a href="">Обо мне</a>
+              <a href="#about">Обо мне</a>
             </li>
             <li>
-              <a href="">Портфолио</a>
+              <a href="#portfolio">Портфолио</a>
             </li>
             <li>
-              <a href="">Услуги</a>
+              <a href="#serve">Услуги</a>
             </li>
             <li>
-              <a href="">Запись</a>
+              <a href="#registry">Запись</a>
             </li>
             <li>
-              <a href="">Отзывы</a>
+              <a href="#reviews">Отзывы</a>
             </li>
             <li>
-              <a href="">Контакты</a>
+              <a href="#contacts">Контакты</a>
             </li>
           </ul>
         </nav>
