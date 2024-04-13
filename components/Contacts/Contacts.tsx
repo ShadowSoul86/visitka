@@ -1,26 +1,4 @@
-import localFont from "next/font/local";
 import Link from "next/link";
-
-const kurier = localFont({
-  src: [
-    {
-      path: "../../public/fonts/KurierLight-Regular.woff",
-      weight: "300",
-      style: "italic",
-    },
-    {
-      path: "../../public/fonts/Kurier-Regular.woff",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Kurier-Bold.woff",
-      weight: "700",
-      style: "bold",
-    },
-  ],
-  variable: "--font-kurier",
-});
 
 const Contacts = () => {
   return (
@@ -29,7 +7,7 @@ const Contacts = () => {
     >
       <div className="max-w-[366px] medium:max-w-[411px] w-full flex flex-col gap-[35px] pad:order-1">
         <h2
-          className={`text-[25px] full:text-[30px] font-bold ${kurier.variable} font-sans`}
+          className={`text-[25px] full:text-[30px] font-bold font-sans`}
         >
           Присоединяйтесь к нам
         </h2>
@@ -70,7 +48,7 @@ const Contacts = () => {
 
       <div className="max-w-[366px] medium:max-w-[411px] w-full flex flex-col gap-[35px]">
         <h2
-          className={`text-[25px] full:text-[30px] font-bold ${kurier.variable} font-sans`}
+          className={`text-[25px] full:text-[30px] font-bold font-sans`}
         >
           Контакты
         </h2>

@@ -1,33 +1,11 @@
-import localFont from "next/font/local";
 import Link from "next/link";
-
-const kurier = localFont({
-  src: [
-    {
-      path: "../../public/fonts/KurierLight-Regular.woff",
-      weight: "300",
-      style: "italic",
-    },
-    {
-      path: "../../public/fonts/Kurier-Regular.woff",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Kurier-Bold.woff",
-      weight: "700",
-      style: "bold",
-    },
-  ],
-  variable: "--font-kurier",
-});
 
 const Registry = () => {
   return (
     <div className="flex flex-col registry mac:flex-row mac:justify-between">
       <div className="flex flex-col gap-[18px] max-w-[365px] medium:max-w-[443px] pad:max-w-[720px] mac:max-w-[607px] full:max-w-[763px]">
         <h2
-          className={`${kurier.variable} default-h2`}
+          className={`font-sans default-h2`}
         >
           Запись
         </h2>

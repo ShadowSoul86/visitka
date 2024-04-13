@@ -4,29 +4,6 @@ import Carousel from "./Carousel";
 import { useAppDispatch, useAppSelector } from "@/hooks/rtk";
 import { next, prev } from "@/redux/reviews/reviews.slice";
 
-import localFont from "next/font/local";
-
-const kurier = localFont({
-  src: [
-    {
-      path: "../../public/fonts/KurierLight-Regular.woff",
-      weight: "300",
-      style: "italic",
-    },
-    {
-      path: "../../public/fonts/Kurier-Regular.woff",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Kurier-Bold.woff",
-      weight: "700",
-      style: "bold",
-    },
-  ],
-  variable: "--font-kurier",
-});
-
 const Reviews: FC = () => {
   const slides = useAppSelector((s) => s.reviews.slides);
   const dispatch = useAppDispatch();
@@ -46,7 +23,7 @@ const Reviews: FC = () => {
 
   return (
     <div className="flex flex-col gap-[35px]">
-      <h2 className={`${kurier.variable} default-h2`}>отзывы</h2>
+      <h2 className={`font-sans default-h2`}>отзывы</h2>
       <div className="flex flex-col gap-[45px]">
         <div>
           <Carousel>

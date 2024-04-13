@@ -1,32 +1,9 @@
 import Image from "next/image";
-
 import Logo from "@/public/img/logo.svg";
 import ClosedMenu from "@/public/img/menu.svg";
 import OpenedMenu from "@/public/img/closemenu.svg";
 import { useAppDispatch, useAppSelector } from "@/hooks/rtk";
 import { setIsOpened } from "@/redux/header/header.slice";
-import localFont from "next/font/local";
-
-const kurier = localFont({
-  src: [
-    {
-      path: "../../public/fonts/KurierLight-Regular.woff",
-      weight: "300",
-      style: "italic",
-    },
-    {
-      path: "../../public/fonts/Kurier-Regular.woff",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Kurier-Bold.woff",
-      weight: "700",
-      style: "bold",
-    },
-  ],
-  variable: "--font-kurier",
-});
 
 const Header = () => {
   const isOpended = useAppSelector((s) => s.header.isOpended);
@@ -84,7 +61,7 @@ const Header = () => {
       {/* content */}
       <div>
         <h1
-          className={`${kurier.variable} header-h1`}
+          className={`font-sans header-h1`}
         >
           <div className="text-left text-my-brown uppercase w-full max-w-[472px] pad:max-w-[827px] mac:max-w-[1249px]">
             Искусство

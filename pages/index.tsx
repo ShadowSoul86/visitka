@@ -11,13 +11,38 @@ import Image from "next/image";
 import Modal from "@/components/Modals/Modal";
 import Politics from "@/components/Politics/Politics";
 
+import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const kurier = localFont({
+  src: [
+    {
+      path: "../public/fonts/KurierLight-Regular.woff",
+      weight: "300",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/Kurier-Regular.woff",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Kurier-Bold.woff",
+      weight: "700",
+      style: "bold",
+    },
+  ],
+  variable: "--font-kurier",
+});
+
 export default function Home() {
   return (
-    <div style={inter.style} className="min-h-screen">
+    <div
+      style={inter.style}
+      className={`${kurier.variable} font-sans min-h-screen`}
+    >
       <Modal />
       <div className="body-main">
         <header className="header">

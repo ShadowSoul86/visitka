@@ -1,5 +1,3 @@
-import localFont from "next/font/local";
-
 import classes from "./Portfolio.module.scss";
 
 import firstImg from "@/public/img/portfolio/first.png";
@@ -103,27 +101,6 @@ const data = [
   },
 ];
 
-const kurier = localFont({
-  src: [
-    {
-      path: "../../public/fonts/KurierLight-Regular.woff",
-      weight: "300",
-      style: "italic",
-    },
-    {
-      path: "../../public/fonts/Kurier-Regular.woff",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Kurier-Bold.woff",
-      weight: "700",
-      style: "bold",
-    },
-  ],
-  variable: "--font-kurier",
-});
-
 const Portfolio = () => {
   const dispatch = useAppDispatch();
 
@@ -135,7 +112,7 @@ const Portfolio = () => {
     <div>
       <div className="mx-auto max-w-[1269px] mb-[60px]">
         <h2
-          className={`${kurier.variable} default-h2 text-center`}
+          className={`font-sans default-h2 text-center`}
         >
           Портфолио
         </h2>

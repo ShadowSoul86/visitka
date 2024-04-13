@@ -2,32 +2,6 @@ import { FC, useEffect } from "react";
 import { closeModal, selectModalOpen } from "@/redux/modal/modal.slice";
 import { useAppDispatch, useAppSelector } from "@/hooks/rtk";
 
-import localFont from "next/font/local";
-import { Inter } from "next/font/google";
-
-const kurier = localFont({
-  src: [
-    {
-      path: "../../public/fonts/KurierLight-Regular.woff",
-      weight: "300",
-      style: "italic",
-    },
-    {
-      path: "../../public/fonts/Kurier-Regular.woff",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/Kurier-Bold.woff",
-      weight: "700",
-      style: "bold",
-    },
-  ],
-  variable: "--font-kurier",
-});
-
-const inter = Inter({ subsets: ["latin"] });
-
 const Modal: FC<any> = () => {
   const modalData = useAppSelector((s) => s.modal.data);
   const dispatch = useAppDispatch();
@@ -86,14 +60,10 @@ const Modal: FC<any> = () => {
         </button>
 
         <div className="flex flex-col gap-[18px] max-w-[407px] text-center mx-auto">
-          <h2
-            className={`${kurier.variable} font-sans font-bold text-[40px] text-center`}
-          >
+          <h2 className={`font-sans font-bold text-[40px] text-center`}>
             {modalData?.title}
           </h2>
-          <div className={`${inter.className} text-[16px] text-my-brown`}>
-            {modalData?.descr}
-          </div>
+          <div className={`text-[16px] text-my-brown`}>{modalData?.descr}</div>
         </div>
 
         <ul className="mt-[40px] mb-[50px]">
@@ -101,9 +71,13 @@ const Modal: FC<any> = () => {
             return (
               <li className="flex flex-col gap-[15px]" key={i}>
                 <div className={`h-[1px] w-full bg-my-modal-line`} />
-                <div className={` ${inter.className} text-[16px] flex justify-between items-center`}>
+                <div
+                  className={`text-[16px] flex justify-between items-center`}
+                >
                   <div className="font-bold">{title}</div>
-                  <div className="w-full font-normal text-my-grey text-left max-w-[265px] ">{text}</div>
+                  <div className="w-full font-normal text-my-grey text-left max-w-[265px] ">
+                    {text}
+                  </div>
                 </div>
                 <div
                   className={`${
