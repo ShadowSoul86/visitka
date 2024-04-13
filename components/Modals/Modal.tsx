@@ -81,7 +81,7 @@ const Modal: FC<any> = () => {
             })}
           </ul>
 
-          <div className="w-full overflow-hidden">
+          <div className="relative w-full overflow-hidden">
             <Carousel curr={curr}>
               {modalData?.slides?.map((s, i) => (
                 <div
@@ -157,19 +157,20 @@ const Modal: FC<any> = () => {
                       </svg>
                     </button>
                   </div>
-                  <div className="absolute bottom-[15px] left-[50%] translate-x-[-55%] flex items-center justify-between gap-[20px]">
-                    {modalData?.slides.map((_, i) => (
-                      <div
-                        key={i}
-                        className={`transition-all rounded-full w-[10px] h-[10px] border-white border-solid border-[1px] ${
-                          curr === i ? "bg-white" : "bg-none"
-                        }`}
-                      />
-                    ))}
-                  </div>
                 </div>
               ))}
             </Carousel>
+
+            <div className="absolute bottom-[15px] left-[50%] translate-x-[-55%] flex items-center justify-between gap-[20px]">
+              {modalData?.slides.map((_, i) => (
+                <div
+                  key={i}
+                  className={`transition-all rounded-full w-[10px] h-[10px] border-white border-solid border-[1px] ${
+                    curr === i ? "bg-white" : "bg-none"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
