@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  app:
+    container_name: visitka_front
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: 'build'
+    ports:
+      - '8080:8080'
+    volumes:
+      - '.:/app'
+    command: /bin/sh -c "npm run dev"
