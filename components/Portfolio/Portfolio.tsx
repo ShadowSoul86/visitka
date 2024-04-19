@@ -7,7 +7,9 @@ const Portfolio = () => {
   return (
     <div>
       <div className="mx-auto max-w-[1269px] mb-[60px]">
-        <h2 id="portfolio" className={`font-sans default-h2 text-center`}>Портфолио</h2>
+        <h2 id="portfolio" className={`font-sans default-h2 text-center`}>
+          Портфолио
+        </h2>
         <div
           className={`mt-[18px] text-center text-[16px] pad:text-[20px] mac:text-[22px] full:text-[28px]`}
         >
@@ -18,12 +20,12 @@ const Portfolio = () => {
         </div>
       </div>
       <div className={classes.grid}>
-        {data?.map((elem, i) => (
+        {data?.map((elem) => (
           <div
-            key={i}
+            key={elem.id}
             className={`${classes.grid__item} relative bg-cover bg-center min-h-[248px] medium:min-h-[331px]`}
             style={{
-              backgroundImage: `url("${elem.image.src}")`,
+              backgroundImage: `url("${elem.images[0].image}")`,
             }}
           >
             <div

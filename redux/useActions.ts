@@ -5,6 +5,7 @@ import { serveSliceActions } from "./serve/serve.slice"
 import { modalSliceActions } from "./modal/modal.slice"
 import { headerSliceActions } from "./header/header.slice"
 import { slideSliceActions } from "./slide/slide.slice"
+import * as portfolioActions from "./portfolio/portfolio.async";
 
 export const useActions = () => {
   const dispatch = useAppDispatch()
@@ -14,5 +15,6 @@ export const useActions = () => {
     ...headerSliceActions,
     ...serveSliceActions,
     ...slideSliceActions,
+    ...portfolioActions,
   }, dispatch), [dispatch])
 }
