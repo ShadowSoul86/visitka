@@ -6,12 +6,12 @@ const Portfolio = () => {
 
   return (
     <div>
-      <div className="mx-auto max-w-[1269px] mb-[60px]">
-        <h2 id="portfolio" className={`font-sans default-h2 text-center`}>
+      <div className="mx-auto max-w-[1269px] mini:mb-[60px]">
+        <h2 id="portfolio" className={`font-sans default-h2 mini:text-center`}>
           Портфолио
         </h2>
         <div
-          className={`mt-[18px] text-center text-[16px] pad:text-[20px] mac:text-[22px] full:text-[28px]`}
+          className={`mt-[18px] text-left mini:text-center text-[16px] pad:text-[20px] mac:text-[22px] full:text-[28px]`}
         >
           Вдохновляйтесь моими работами! В этом разделе вы найдёте фотографии и
           истории успеха моих клиентов. От роскошных окрашенных прядей до
@@ -23,7 +23,7 @@ const Portfolio = () => {
         {data?.map((elem) => (
           <div
             key={elem.id}
-            className={`${classes.grid__item} relative bg-cover bg-center min-h-[248px] medium:min-h-[331px]`}
+            className={`${classes.grid__item} relative bg-cover bg-center min-h-[145px] mini:min-h-[248px] medium:min-h-[331px]`}
             style={{
               backgroundImage: `url("${elem.images[0].image}")`,
             }}

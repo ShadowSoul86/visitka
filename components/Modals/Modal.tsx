@@ -12,7 +12,7 @@ const Modal: FC<any> = () => {
 
   return isOpen ? (
     <div className="modal-bg">
-      <div className="modal w-[468px] medium:w-[635px] pad:w-[832px] mac:w-[900px] full:w-[1010px]">
+      <div className="modal w-[320px] mini:w-[468px] medium:w-[635px] pad:w-[832px] mac:w-[900px] full:w-[1010px]">
         <button
           className="absolute z-50 top-[15px] right-[-40px]"
           onClick={() => closeModal()}
@@ -43,7 +43,7 @@ const Modal: FC<any> = () => {
         <div className="overflow-y-auto max-h-[700px] full:max-h-[1100px] scrollbar-hide">
           <div className="flex flex-col gap-[18px] text-center mx-auto max-w-[407px] medium:max-w-[532px] mac:max-w-[569px] full:max-w-[630px]">
             <h2
-              className={`font-sans font-bold text-center text-[40px] medium:text-[48px]`}
+              className={`font-sans font-bold text-center text-[30px] mini:text-[40px] medium:text-[48px]`}
             >
               {modalData?.title}
             </h2>

@@ -6,16 +6,14 @@ const Contacts = () => {
       className={`flex flex-col gap-[60px] pad:flex-row pad:justify-between pt-[50px] pb-[30px]`}
     >
       <div className="max-w-[366px] medium:max-w-[411px] w-full flex flex-col gap-[35px] pad:order-1">
-        <h2
-          className={`text-[25px] full:text-[30px] font-bold font-sans`}
-        >
+        <h2 className={`text-[25px] full:text-[30px] font-bold font-sans`}>
           Присоединяйтесь к нам
         </h2>
         <div className="flex flex-col gap-[15px]">
           <div className={`text-[16px] medium:text-[18px] font-normal`}>
             Следите за нашими обновлениями в соцсетях
           </div>
-          <button className="w-[335px] h-[51px] bg-my-green border-none rounded-md text-[16px] font-semibold text-center">
+          <button className="mini:w-[335px] h-[51px] bg-my-green border-none rounded-md text-[16px] font-semibold text-center">
             <Link
               className="flex justify-center items-center gap-3 font-sans text-[16px]"
               href={"#"}
@@ -46,7 +44,7 @@ const Contacts = () => {
         </div>
       </div>
 
-      <div className="max-w-[366px] medium:max-w-[411px] w-full flex flex-col gap-[35px]">
+      <div className="w-full max-w-[366px] medium:max-w-[411px] flex flex-col gap-[35px]">
         <h2
           id="contacts"
           className={`text-[25px] full:text-[30px] font-bold font-sans`}
@@ -54,7 +52,7 @@ const Contacts = () => {
           Контакты
         </h2>
         <div
-          className={`flex justify-between items-center text-[18px] full:text-[20px] font-normal text-my-grey`}
+          className={`w-full flex flex-col gap-[25px] mini:gap-0 mini:flex-row mini:justify-between text-[18px] full:text-[20px] font-normal text-my-grey`}
         >
           <div>
             <h3 className="font-[600] text-my-brown mb-3">Адрес</h3>
@@ -62,7 +60,7 @@ const Contacts = () => {
             <div>hello@gmail.com</div>
             <div>+ 7 999 555 44 33</div>
           </div>
-          <div>
+          <div className="w-full max-w-[78px]">
             <h3 className="font-[600] text-my-brown mb-3">Соцсети</h3>
             <div>
               <Link href={"#"}>Telegram</Link>

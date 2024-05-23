@@ -21,8 +21,8 @@ body {
 }
 
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* Для Internet Explorer и Edge */
-  scrollbar-width: none;  /* Для Firefox */
+  -ms-overflow-style: none; /* Для Internet Explorer и Edge */
+  scrollbar-width: none; /* Для Firefox */
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -32,6 +32,10 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .bg-img-bg {
+    background: linear-gradient(180deg, rgba(38, 28, 21, 0.4) 0%, rgba(38, 28, 21, 0.15) 10.86%, rgba(38, 28, 21, 0.07) 20.69%, rgba(38, 28, 21, 0) 28.83%), linear-gradient(360deg, rgba(38, 28, 21, 0.15) 25.73%, rgba(38, 28, 21, 0.4) 50.59%, rgba(38, 28, 21, 0.15) 74.2%, rgba(38, 28, 21, 0) 83.83%);
   }
 }
 
@@ -53,47 +57,47 @@ body {
   }
 
   .mobile-menu {
-    @apply absolute top-0 right-0 bg-white pt-[41px] pl-[60px] w-[275px] h-[512px] medium:w-[368px] medium:h-[582px] pad:w-[483px] pad:h-[592px]
+    @apply absolute top-0 right-0 bg-white pt-[41px] pl-[60px] w-[275px] h-[512px] medium:w-[368px] medium:h-[582px] pad:w-[483px] pad:h-[592px];
   }
 
   .body-main {
-    @apply flex flex-col w-full gap-[140px] mx-auto max-w-[90%] med:max-w-[600px] medium:max-w-[688px] pad:max-w-[910px] megapad:max-w-[1100px] mac:max-w-[90%] full:max-w-[1681px];
+    @apply flex flex-col w-full gap-[80px] mini:gap-[140px] mx-auto max-w-[95%] mini:max-w-[90%] med:max-w-[600px] medium:max-w-[688px] pad:max-w-[910px] megapad:max-w-[1100px] mac:max-w-[90%] full:max-w-[1681px];
   }
 
   .bg-img {
-    @apply absolute top-0 right-0 z-[-1] w-[274px] h-[416px] med:w-[367px] med:h-[482px] pad:w-[482px] pad:h-[593px] megapad:w-[633px] megapad:h-[800px] mac:w-[733px] mac:h-[900px] full:w-[930px] full:h-[1080px];
+    @apply absolute top-0 right-0 z-[-1] object-cover w-full h-[660px] mini:w-[274px] mini:h-[416px] med:w-[367px] med:h-[482px] pad:w-[482px] pad:h-[593px] megapad:w-[633px] megapad:h-[800px] mac:w-[733px] mac:h-[900px] full:w-[930px] full:h-[1080px];
   }
 
   .header {
-    @apply pt-8 min-h-[416px] mini:min-h-[482px] pad:min-h-[593px] megapad:min-h-[900px] 2xl:min-h-[1080px];
+    @apply pt-8 min-h-[612px] mini:min-h-[482px] pad:min-h-[593px] megapad:min-h-[900px] 2xl:min-h-[1080px];
   }
 
   .header-h1 {
-    @apply font-sans font-bold text-[56px] medium:text-[75px] pad:text-[98px] mac:text-[148px] full:text-[178px];
+    @apply font-sans font-bold w-full mt-[200px] mini:mt-0 text-[46px] mini:text-[56px] medium:text-[75px] pad:text-[98px] mac:text-[148px] full:text-[178px] leading-[50px];
   }
 
   .header-content {
-    @apply flex flex-col medium:gap-[22px] max-w-[252px] medium:max-w-[340px] pad:max-w-[444px] mac:max-w-[546px] full:max-w-[708px];
+    @apply flex flex-col medium:gap-[22px] mini:max-w-[252px] medium:max-w-[340px] pad:max-w-[444px] mac:max-w-[546px] full:max-w-[708px];
   }
 
   .header-btns {
-    @apply flex flex-col font-semibold gap-[18px] text-[16px] full:text-[20px] pad:flex-row pad:justify-between pad:gap-[25px];
+    @apply w-full flex flex-col font-semibold gap-[18px] text-[16px] full:text-[20px] pad:flex-row pad:justify-between pad:gap-[25px];
   }
 
   .header-btn {
-    @apply w-full h-[53px] cursor-pointer rounded-lg max-w-[235px] medium:max-w-[254px] full:max-w-[337px] full:h-[64px];
+    @apply w-full h-[53px] cursor-pointer rounded-lg mini:max-w-[235px] medium:max-w-[254px] full:max-w-[337px] full:h-[64px];
   }
 
   .header-text {
-    @apply text-my-brown font-normal text-[16px] mac:text-[22px] full:text-[28px];
+    @apply text-my-white w-full mt-5 mb-[50px] mini:mt-0 mini:mb-0 mini:text-my-brown font-normal text-[16px] mac:text-[22px] full:text-[28px];
   }
 
   .about-text {
-    @apply mt-[18px] text-[16px] pad:text-[20px] mac:text-[22px] full:text-[28px]
+    @apply mt-[18px] text-[16px] pad:text-[20px] mac:text-[22px] full:text-[28px];
   }
 
   .about-img {
-    @apply w-[222px] h-[293px] medium:w-[257px] medium:h-[340px] pad:w-[318px] pad:h-[420px] mac:w-[486px] mac:h-[570px]
+    @apply w-[300px] object-cover mini:w-[222px] h-[293px] medium:w-[257px] medium:h-[340px] pad:w-[318px] pad:h-[420px] mac:w-[486px] mac:h-[570px];
   }
 
   .serve-li {
@@ -105,7 +109,7 @@ body {
   }
 
   .registry {
-    @apply bg-my-light rounded-[20px] flex flex-col w-full justify-center gap-[60px] py-[60px] px-[50px] medium:pl-[95px]
+    @apply bg-my-light rounded-[20px] flex flex-col w-full justify-center gap-[60px] px-[10px] py-[20px] mini:py-[60px] mini:px-[50px] medium:pl-[95px];
   }
 
   .footer-inner {

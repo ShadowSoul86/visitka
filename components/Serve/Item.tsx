@@ -2,15 +2,15 @@ const Item = ({ data }: any) => {
   const { title, text, time, price } = data;
 
   return (
-    <div className="flex justify-between">
+    <div className="flex flex-col mini:flex-row mini:justify-between">
       <h3
-        className={`text-[16px] pad:text-[18px] full:text-[20px] font-[700] w-full max-w-[183px]`}
+        className={`text-[16px] pad:text-[18px] full:text-[20px] font-[700] w-full max-w-[183px] mb-[14px] mini:mb-0`}
       >
         {title}
       </h3>
 
       <div
-        className={`w-full flex justify-between max-w-[317px] medium:max-w-[425px] pad:max-w-[594px] mac:max-w-[910px]`}
+        className={`w-full flex justify-between mini:max-w-[317px] medium:max-w-[425px] pad:max-w-[594px] mac:max-w-[910px]`}
       >
         <div className="flex flex-col gap-[6px] text-[16px] pad:text-[18px] full:text-[20px]">
           <div className={`text-my-grey`}>{text}</div>

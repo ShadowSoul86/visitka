@@ -42,7 +42,7 @@ const Serve = () => {
       </ul>
 
       <button
-        className={`w-full h-16 font-[600] text-[17px] full:text-[20px] text-my-grey text-center border rounded-lg border-my-grey`}
+        className={`w-full h-[51px] mini:h-16 font-[600] text-[17px] full:text-[20px] text-my-grey text-center border rounded-lg border-my-grey`}
       >
         Смотреть ещё
       </button>

@@ -47,10 +47,10 @@ const Header = () => {
       {/* content */}
       <div>
         <h1 className={`font-sans header-h1`}>
-          <div className="text-left text-my-brown uppercase w-full max-w-[472px] pad:max-w-[827px] mac:max-w-[1249px]">
+          <div className="text-left text-my-white mini:text-my-brown uppercase w-full max-w-[472px] pad:max-w-[827px] mac:max-w-[1249px]">
             Искусство
           </div>
-          <div className="mr-[7%] mini:mr-0 text-right text-my-white uppercase">
+          <div className="mr-[7%] mini:mr-0 text-left mini:text-right text-my-white uppercase">
             Волос
           </div>
         </h1>
@@ -63,10 +63,10 @@ const Header = () => {
 
           <div className="header-btns">
             <button className="header-btn text-my-brown bg-my-green border-none ">
-              Записаться
+              <a href="#registry">Записаться</a>
             </button>
-            <button className="header-btn text-my-grey border border-solid border-my-green ">
-              Смотреть услуги
+            <button className="header-btn text-my-white mini:text-my-grey border border-solid border-my-white mini:border-my-green ">
+              <a href="#serve">Смотреть услуги</a>
             </button>
           </div>
         </div>
