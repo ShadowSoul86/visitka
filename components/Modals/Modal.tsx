@@ -4,11 +4,13 @@ import Image from "next/image";
 import { useAppSelector } from "@/hooks/rtk";
 import { useModalSlides } from "@/hooks/useModalSlides";
 import Carousel from "../utils/Carousel";
+import Item from "./Item";
 
 const Modal: FC<any> = () => {
   const { isOpen, closeModal, modalData } = useModal();
+
   const curr = useAppSelector((s) => s.modal.currSlide);
-  const { tapNext, tapPrev } = useModalSlides(modalData?.slides, curr);
+  const { tapNext, tapPrev } = useModalSlides(modalData?.images, curr);
 
   return isOpen ? (
     <div className="modal-bg">
@@ -50,40 +52,20 @@ const Modal: FC<any> = () => {
             <div
               className={`text-my-brown text-[16px] pad:text-[20px] full:text-[24px]`}
             >
-              {modalData?.descr}
+              {modalData?.description}
             </div>
           </div>
 
           <ul className="mt-[40px] mb-[50px]">
-            {modalData?.list?.map(({ title, text }, i) => {
-              return (
-                <li className="flex flex-col gap-[15px]" key={i}>
-                  <div className={`h-[1px] w-full bg-my-modal-line`} />
-                  <div
-                    className={`text-[16px] pad:text-[18px] full:text-[20px] flex justify-between`}
-                  >
-                    <div className="font-bold w-full max-w-[93px] medium:max-w-[200px] full:max-w-[300px] text-wrap">
-                      {title}
-                    </div>
-                    <div className="w-full font-normal text-my-grey text-left max-w-[265px] medium:max-w-[360px] pad:max-w-[466px] mac:max-w-[496px] full:max-w-[580px]">
-                      {text}
-                    </div>
-                  </div>
-                  <div
-                    className={`${
-                      i === modalData.list.length - 1
-                        ? "h-[1px] w-full bg-my-modal-line"
-                        : null
-                    }`}
-                  />
-                </li>
-              );
-            })}
+            <Item title={"Цель"} text={modalData?.goal || ""} />
+            <Item title={"Задачи"} text={modalData?.tasks || ""} />
+            <Item title={"Продукты и методы"} text={modalData?.products_and_methods || ""} />
+            <Item title={"Процесс"} text={modalData?.process || ""} />
           </ul>
 
           <div className="relative w-full overflow-hidden">
             <Carousel curr={curr}>
-              {modalData?.slides?.map((s, i) => (
+              {modalData?.images?.map((s, i) => (
                 <div
                   className="relative min-w-full h-[275px] medium:w-[580px] medium:h-[480px] flex"
                   key={i}
@@ -91,8 +73,8 @@ const Modal: FC<any> = () => {
                   <Image
                     width={400}
                     height={275}
-                    src={s.img}
-                    alt={s.alt}
+                    src={s.image}
+                    alt={"изображение"}
                     className="flex justify-center items-center h-full w-full object-cover"
                   />
                   <div className="absolute w-full px-6 top-[50%] flex items-center justify-between">
@@ -126,7 +108,7 @@ const Modal: FC<any> = () => {
                     <button
                       onClick={tapNext}
                       className={`${
-                        curr !== modalData?.slides?.length - 1
+                        curr !== modalData?.images?.length - 1
                           ? "cursor-pointer"
                           : "cursor-auto"
                       }`}
@@ -162,7 +144,7 @@ const Modal: FC<any> = () => {
             </Carousel>
 
             <div className="absolute bottom-[15px] left-[50%] translate-x-[-55%] flex items-center justify-between gap-[20px]">
-              {modalData?.slides.map((_, i) => (
+              {modalData?.images.map((_, i) => (
                 <div
                   key={i}
                   className={`transition-all rounded-full w-[10px] h-[10px] border-white border-solid border-[1px] ${

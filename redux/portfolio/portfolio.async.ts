@@ -5,7 +5,7 @@ import { BASE_URL, Method } from "../const";
 export const getPortfolioList = createAsyncThunk(
   "portfolio/getPortfolioList",
   async () => {
-    const url = `${BASE_URL}portfolio/`;
+    const url = `${BASE_URL}/api/visitka/portfolio/`;
 
     const response = await useAxios(url, null, Method.Get);
 

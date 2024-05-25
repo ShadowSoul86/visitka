@@ -6,7 +6,7 @@ const useAxios = async (url: string, params: any, method: string) => {
       url,
       method,
       params,
-      withCredentials: true,
+      withCredentials: false,
       headers: {
         "Content-Type": "application/json"
       },

@@ -24,20 +24,21 @@ export const modalSlice = createSlice({
     },
     closeModal: (state) => {
       state.isOpen = false;
+      state.data = null;
     },
     nextModalSlide: (state) => {
-      if (state.data?.slides) {
+      if (state.data?.images) {
         state.currSlide =
-          state.currSlide === state.data.slides.length - 1
+          state.currSlide === state.data.images.length - 1
             ? 0
             : state.currSlide + 1;
       }
     },
     prevModalSlide: (state) => {
-      if (state.data?.slides) {
+      if (state.data?.images) {
         state.currSlide =
           state.currSlide === 0
-            ? state.data.slides.length - 1
+            ? state.data.images.length - 1
             : state.currSlide - 1;
       }
     },

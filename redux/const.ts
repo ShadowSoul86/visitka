@@ -1,8 +1,10 @@
-export const BASE_URL = 'http://127.0.0.1:8000/api/visitka/';
+import config from "@/config/config";
+
+export const BASE_URL = config.serverURL;
 
 export enum Method {
-  Get = 'GET',
-  Post = 'POST',
-  Delete = 'DELETE',
-  Put = 'PUT',
+  Get = "GET",
+  Post = "POST",
+  Delete = "DELETE",
+  Put = "PUT",
 }

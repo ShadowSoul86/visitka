@@ -16,7 +16,7 @@ const Registry = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap mini:max-w-[466px] items-center justify-between mini:justify-start gap-10 mac:items-end">
+      <div className="flex flex-wrap mini:flex-nowrap mini:max-w-[466px] items-center justify-between mini:justify-start gap-10 mac:items-end">
         <Link href={"#"}>
           <svg
             width="50"
@@ -81,7 +81,7 @@ const Registry = () => {
             />
           </svg>
         </Link>
-        <div className="flex items-center justify-between gap-10 w-full max-w-[60%] mini:max-w-0">
+        <div className="flex items-center justify-between gap-10 w-full max-w-[60%] mini:max-w-[none]">
           <Link href={"#"}>
             <svg
               width="50"

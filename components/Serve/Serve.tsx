@@ -9,7 +9,7 @@ const Serve = () => {
       <div className="w-full flex flex-col gap-[18px] pad:flex-row pad:justify-between pad:items-center">
         <h2 id="serve" className={`font-sans default-h2 pad:text-center`}>Услуги</h2>
 
-        <ul className={`uppercase text-[16px] flex items-center`}>
+        <ul className={`scrollbar-hide uppercase text-[16px] flex items-center overflow-x-auto`}>
           {tabs.map((tab) => {
             return (
               <li

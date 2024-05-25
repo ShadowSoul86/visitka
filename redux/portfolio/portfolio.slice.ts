@@ -4,10 +4,12 @@ import { getPortfolioList } from "./portfolio.async";
 
 export interface portfolioState {
   data: portfolioCard[] | null;
+  loadedStatus: boolean;
 }
 
 const initialState: portfolioState = {
   data: null,
+  loadedStatus: false
 };
 
 export const portfolioSlice = createSlice({
@@ -15,8 +17,13 @@ export const portfolioSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getPortfolioList.fulfilled, (state, { payload }) => {
+    builder
+    .addCase(getPortfolioList.pending, (state) => {
+      state.loadedStatus = true;
+    })
+    .addCase(getPortfolioList.fulfilled, (state, { payload }) => {
       state.data = payload;
+      state.loadedStatus = false;
     });
   },
 });

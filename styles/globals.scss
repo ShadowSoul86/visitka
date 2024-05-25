@@ -34,8 +34,25 @@ body {
     text-wrap: balance;
   }
 
+  .scrollbar-hide {
+    scrollbar-width: none;
+  }
+
   .bg-img-bg {
-    background: linear-gradient(180deg, rgba(38, 28, 21, 0.4) 0%, rgba(38, 28, 21, 0.15) 10.86%, rgba(38, 28, 21, 0.07) 20.69%, rgba(38, 28, 21, 0) 28.83%), linear-gradient(360deg, rgba(38, 28, 21, 0.15) 25.73%, rgba(38, 28, 21, 0.4) 50.59%, rgba(38, 28, 21, 0.15) 74.2%, rgba(38, 28, 21, 0) 83.83%);
+    background: linear-gradient(
+        180deg,
+        rgba(38, 28, 21, 0.4) 0%,
+        rgba(38, 28, 21, 0.15) 10.86%,
+        rgba(38, 28, 21, 0.07) 20.69%,
+        rgba(38, 28, 21, 0) 28.83%
+      ),
+      linear-gradient(
+        360deg,
+        rgba(38, 28, 21, 0.15) 25.73%,
+        rgba(38, 28, 21, 0.4) 50.59%,
+        rgba(38, 28, 21, 0.15) 74.2%,
+        rgba(38, 28, 21, 0) 83.83%
+      );
   }
 }
 
@@ -73,7 +90,7 @@ body {
   }
 
   .header-h1 {
-    @apply font-sans font-bold w-full mt-[200px] mini:mt-0 text-[46px] mini:text-[56px] medium:text-[75px] pad:text-[98px] mac:text-[148px] full:text-[178px] leading-[50px];
+    @apply font-sans font-bold w-full mt-[200px] mini:mt-[133px] text-[46px] mini:text-[56px] medium:text-[75px] pad:text-[98px] mac:text-[148px] full:text-[178px] leading-[50px];
   }
 
   .header-content {
