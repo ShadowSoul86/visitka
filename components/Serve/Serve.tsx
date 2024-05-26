@@ -1,20 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Item from "./Item";
 import { useServe } from "@/hooks/useServe";
+import { serveType } from "@/redux/serve/serve.types";
 
 const Serve = () => {
   const { tabs, activeTab, setActiveTab, data, loadedStatus } = useServe();
 
-  const filteredData = data?.filter((elem) =>
-    activeTab === "Все" ? elem : elem.type === activeTab
-  );
+  const [filteredData, setFilteredData] = useState<serveType[]>([]);
+  const [visibleCount, setVisibleCount] = useState<number>(5);
 
-  const [visibleCount, setVisibleCount] = useState<number>(
-    Math.min(filteredData?.length || 0, 5)
-  );
-
+  
+  useEffect(() => {
+    if (loadedStatus) {
+      const newFilteredData = data?.filter((elem) =>
+        activeTab === "Все" ? true : elem.type === activeTab
+    );
+      setFilteredData(newFilteredData);
+      setVisibleCount(Math.min(newFilteredData.length, 5));
+    }
+  }, [data, activeTab, loadedStatus]);
+  
   const servicesToShow = filteredData?.slice(0, visibleCount);
-
+  
   const handleShowMore = () => {
     setVisibleCount((prevCount) => Math.min(prevCount + 5, data.length));
   };
@@ -45,16 +52,13 @@ const Serve = () => {
         </ul>
       </div>
 
-      {loadedStatus && (
+      {loadedStatus && servicesToShow?.length > 0 && (
         <ul className="flex flex-col gap-[25px]">
           {servicesToShow?.map((elem, i) => {
             return (
               <div className="flex flex-col gap-[25px]" key={i}>
                 <div className="w-full h-[1px] bg-my-grey"></div>
                 <Item key={i} data={elem} />
-                {i !== data.length - 1 && (
-                  <div className="w-full h-[1px] bg-my-grey"></div>
-                )}
               </div>
             );
           })}
@@ -62,7 +66,7 @@ const Serve = () => {
         </ul>
       )}
 
-      {visibleCount < (filteredData?.length || 0) && (
+      {visibleCount < filteredData?.length && (
         <button
           onClick={handleShowMore}
           className={`w-full h-[51px] mini:h-16 font-[600] text-[17px] full:text-[20px] text-my-grey text-center border rounded-lg border-my-grey`}

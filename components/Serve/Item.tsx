@@ -21,14 +21,15 @@ const Item: FC<ItemProps> = ({ data }) => {
       >
         <div className="flex flex-col gap-[6px] text-[16px] pad:text-[18px] full:text-[20px]">
           <div className={`text-my-grey`}>{description}</div>
-          <div className={`text-my-grey`}>Противопоказания </div>
+          <div className={`text-my-grey`}>Противопоказания: </div>
           <div className={`text-my-grey`}>
-            Время выполнения {execution_time}
+            Время выполнения: {execution_time}
           </div>
           <div className={`text-my-brown`}>{price}</div>
         </div>
 
-        <div
+        <a
+          href="#registry"
           className={`flex items-center gap-[12px] text-[16px] full:text-[18px] text-my-grey self-end`}
         >
           <span className="hidden pad:inline">Записаться</span>
@@ -51,7 +52,7 @@ const Item: FC<ItemProps> = ({ data }) => {
               </clipPath>
             </defs>
           </svg>
-        </div>
+        </a>
       </div>
     </div>
   );

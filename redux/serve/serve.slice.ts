@@ -28,13 +28,16 @@ export const serveSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getServiceList.pending, (state) => {
-        state.loadedStatus = true;
-      })
-      .addCase(getServiceList.fulfilled, (state, { payload }) => {
-        state.data = payload;
+      .addCase(getServiceList.pending.type, (state) => {
         state.loadedStatus = false;
-      });
+      })
+      .addCase(
+        getServiceList.fulfilled.type,
+        (state, { payload }: PayloadAction<serveType[]>) => {
+          state.data = payload;
+          state.loadedStatus = true;
+        }
+      );
   },
 });
 
