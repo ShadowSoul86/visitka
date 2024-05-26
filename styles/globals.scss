@@ -90,7 +90,7 @@ body {
   }
 
   .header-h1 {
-    @apply font-sans font-bold w-full mt-[200px] mini:mt-[133px] text-[46px] mini:text-[56px] medium:text-[75px] pad:text-[98px] mac:text-[148px] full:text-[178px] leading-[50px];
+    @apply font-sans font-bold w-full mt-[200px] mini:mt-[133px] text-[46px] mini:text-[56px] medium:text-[75px] pad:text-[98px] mac:text-[148px] full:text-[178px] leading-[50px] mini:leading-[70px] pad:leading-[100px] mac:leading-[120px] full:leading-[150px];
   }
 
   .header-content {

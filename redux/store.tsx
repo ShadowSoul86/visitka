@@ -2,15 +2,15 @@ import { configureStore } from "@reduxjs/toolkit";
 import { serveSliceReducer } from "./serve/serve.slice";
 import { modalSliceReducer } from "./modal/modal.slice";
 import { headerSliceReducer } from "./header/header.slice";
-import { slideSliceReducer } from "./slide/slide.slice";
 import { portfolioSliceReducer } from "./portfolio/portfolio.slice";
+import { reviewsSliceReducer } from "./reviews/reviews.slice";
 
 export const store = configureStore({
   reducer: {
     header: headerSliceReducer,
     portfolio: portfolioSliceReducer,
     modal: modalSliceReducer,
-    slide: slideSliceReducer,
+    reviews: reviewsSliceReducer,
     serve: serveSliceReducer,
   },
 });
