@@ -1,21 +1,4 @@
-export const tabs = [
-  {
-    alias: "all",
-    title: "Все",
-  },
-  {
-    alias: "care",
-    title: "Уход",
-  },
-  {
-    alias: "staining",
-    title: "окрашивание",
-  },
-  {
-    alias: "hairs",
-    title: "причёски",
-  },
-];
+export const tabs = ["Все", "Уход", "Окрашивание", "Причёски"];
 
 export const mockData = [
   {
@@ -30,4 +13,4 @@ export const mockData = [
     time: "2-3 hours",
     price: "3000",
   },
-]
+];

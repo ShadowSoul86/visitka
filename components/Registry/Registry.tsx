@@ -81,7 +81,7 @@ const Registry = () => {
             />
           </svg>
         </Link>
-        <div className="flex items-center justify-between gap-10 w-full max-w-[60%] mini:max-w-[none]">
+        <div className="flex items-center justify-between mini:justify-start gap-10 w-full max-w-[60%] mini:max-w-[none]">
           <Link href={"#"}>
             <svg
               width="50"

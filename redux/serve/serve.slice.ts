@@ -1,22 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { mockData, tabs } from "./serve.const";
-
-export interface serveTab {
-  alias: string;
-  title: string;
-}
+import { tabs } from "./serve.const";
+import { serveType } from "./serve.types";
+import { getServiceList } from "./serve.async";
 
 export interface serveState {
-  tabs: serveTab[];
+  tabs: string[];
   activeTab: string;
-  data: any[]
+  data: serveType[];
+  loadedStatus: boolean;
 }
 
 const initialState: serveState = {
   tabs,
-  activeTab: "all",
-  data: mockData,
+  activeTab: "Все",
+  data: [],
+  loadedStatus: false,
 };
 
 export const serveSlice = createSlice({
@@ -27,9 +26,17 @@ export const serveSlice = createSlice({
       state.activeTab = payload;
     },
   },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getServiceList.pending, (state) => {
+        state.loadedStatus = true;
+      })
+      .addCase(getServiceList.fulfilled, (state, { payload }) => {
+        state.data = payload;
+        state.loadedStatus = false;
+      });
+  },
 });
 
-export const {
-  reducer: serveSliceReducer,
-  actions: serveSliceActions
-} = serveSlice
+export const { reducer: serveSliceReducer, actions: serveSliceActions } =
+  serveSlice;

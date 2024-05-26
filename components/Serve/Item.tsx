@@ -1,5 +1,12 @@
-const Item = ({ data }: any) => {
-  const { title, text, time, price } = data;
+import { serveType } from "@/redux/serve/serve.types";
+import { FC } from "react";
+
+interface ItemProps {
+  data: serveType;
+}
+
+const Item: FC<ItemProps> = ({ data }) => {
+  const { title, price, description, execution_time } = data;
 
   return (
     <div className="flex flex-col mini:flex-row mini:justify-between">
@@ -13,8 +20,11 @@ const Item = ({ data }: any) => {
         className={`w-full flex justify-between mini:max-w-[317px] medium:max-w-[425px] pad:max-w-[594px] mac:max-w-[910px]`}
       >
         <div className="flex flex-col gap-[6px] text-[16px] pad:text-[18px] full:text-[20px]">
-          <div className={`text-my-grey`}>{text}</div>
-          <div className={`text-my-grey`}>{time}</div>
+          <div className={`text-my-grey`}>{description}</div>
+          <div className={`text-my-grey`}>Противопоказания </div>
+          <div className={`text-my-grey`}>
+            Время выполнения {execution_time}
+          </div>
           <div className={`text-my-brown`}>{price}</div>
         </div>
 
