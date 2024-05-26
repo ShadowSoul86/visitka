@@ -25,6 +25,7 @@ export const modalSlice = createSlice({
     closeModal: (state) => {
       state.isOpen = false;
       state.data = null;
+      state.currSlide = 0;
     },
     nextModalSlide: (state) => {
       if (state.data?.images) {

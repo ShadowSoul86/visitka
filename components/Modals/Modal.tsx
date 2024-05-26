@@ -16,7 +16,7 @@ const Modal: FC<any> = () => {
     <div className="modal-bg">
       <div className="modal w-[320px] mini:w-[468px] medium:w-[635px] pad:w-[832px] mac:w-[900px] full:w-[1010px]">
         <button
-          className="absolute z-50 top-[15px] right-[-40px]"
+          className="hidden mini:block absolute z-[1000] top-[15px] right-[-40px]"
           onClick={() => closeModal()}
         >
           <svg
@@ -43,12 +43,40 @@ const Modal: FC<any> = () => {
         </button>
 
         <div className="overflow-y-auto max-h-[700px] full:max-h-[1100px] scrollbar-hide">
-          <div className="flex flex-col gap-[18px] text-center mx-auto max-w-[407px] medium:max-w-[532px] mac:max-w-[569px] full:max-w-[630px]">
-            <h2
-              className={`font-sans font-bold text-center text-[30px] mini:text-[40px] medium:text-[48px]`}
-            >
-              {modalData?.title}
-            </h2>
+          <div className="flex flex-col gap-[18px] text-left mini:text-center mx-auto max-w-[407px] medium:max-w-[532px] mac:max-w-[569px] full:max-w-[630px]">
+            <div className="flex justify-between mini:justify-start mini:flex-col">
+              <h2
+                className={`font-sans font-bold text-left mini:text-center text-[30px] mini:text-[40px] medium:text-[48px]`}
+              >
+                {modalData?.title}
+              </h2>
+
+              <button
+                className="mini:hidden mini:w-0"
+                onClick={() => closeModal()}
+              >
+                <svg
+                  width="29"
+                  height="29"
+                  viewBox="0 0 29 29"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M27 2L2 27"
+                    stroke="#261C15"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M2 2L27 27"
+                    stroke="#261C15"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
             <div
               className={`text-my-brown text-[16px] pad:text-[20px] full:text-[24px]`}
             >
@@ -59,7 +87,10 @@ const Modal: FC<any> = () => {
           <ul className="mt-[40px] mb-[50px]">
             <Item title={"Цель"} text={modalData?.goal || ""} />
             <Item title={"Задачи"} text={modalData?.tasks || ""} />
-            <Item title={"Продукты и методы"} text={modalData?.products_and_methods || ""} />
+            <Item
+              title={"Продукты и методы"}
+              text={modalData?.products_and_methods || ""}
+            />
             <Item title={"Процесс"} text={modalData?.process || ""} />
           </ul>
 

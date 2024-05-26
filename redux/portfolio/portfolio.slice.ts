@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { portfolioCard } from "./portfolio.types";
 import { getPortfolioList } from "./portfolio.async";
 
@@ -9,7 +9,7 @@ export interface portfolioState {
 
 const initialState: portfolioState = {
   data: null,
-  loadedStatus: false
+  loadedStatus: false,
 };
 
 export const portfolioSlice = createSlice({
@@ -18,13 +18,16 @@ export const portfolioSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-    .addCase(getPortfolioList.pending, (state) => {
-      state.loadedStatus = true;
-    })
-    .addCase(getPortfolioList.fulfilled, (state, { payload }) => {
-      state.data = payload;
-      state.loadedStatus = false;
-    });
+      .addCase(getPortfolioList.pending.type, (state) => {
+        state.loadedStatus = true;
+      })
+      .addCase(
+        getPortfolioList.fulfilled.type,
+        (state, { payload }: PayloadAction<portfolioCard[]>) => {
+          state.data = payload;
+          state.loadedStatus = false;
+        }
+      );
   },
 });
 

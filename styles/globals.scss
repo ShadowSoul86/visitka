@@ -62,7 +62,7 @@ body {
   }
 
   .modal {
-    @apply relative bg-white px-[33px] medium:px-[25px] pad:px-[40px] mac:px-[50px] pt-[45px] pb-[34px] rounded-[25px] shadow-md;
+    @apply relative bg-white px-[10px] mini:px-[33px] medium:px-[25px] pad:px-[40px] mac:px-[50px] py-[20px] mini:py-[30px] full:py-[45px] rounded-[25px] shadow-md;
   }
 
   .modal-bg {
@@ -107,6 +107,14 @@ body {
 
   .header-text {
     @apply text-my-white w-full mt-5 mb-[50px] mini:mt-0 mini:mb-0 mini:text-my-brown font-normal text-[16px] mac:text-[22px] full:text-[28px];
+  }
+
+  .portfolio-image-container {
+    @apply relative bg-cover bg-center rounded mini:rounded-[7px] medium:rounded-[9px] full:rounded-[15px] min-h-[145px] mini:min-h-[248px] medium:min-h-[331px]
+  }
+
+  .portfolio-image {
+    @apply absolute px-[8px] mini:px-[15px] medium:px-[20px] mac:px-[30px] w-full flex justify-between bottom-[8px]  mini:bottom-[15px] medium:bottom-[20px] mac:bottom-[30px];
   }
 
   .about-text {

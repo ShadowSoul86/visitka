@@ -20,32 +20,32 @@ const Portfolio = () => {
           говорят сами за себя.
         </div>
       </div>
-      <div className={classes.grid}>
+      <div className={`${classes.grid} mt-[18px] mini:mt-0`}>
         {loadedStatus
           ? "Loading"
           : data?.map((elem) => {
               return (
                 <div
                   key={elem.id}
-                  className={`${classes.grid__item} relative bg-cover bg-center min-h-[145px] mini:min-h-[248px] medium:min-h-[331px]`}
+                  className={`${classes.grid__item} portfolio-image-container`}
                   style={{
-                    backgroundImage: `url("${
-                      config.serverURL + elem.images[0].image
-                    }")`,
+                    backgroundImage: `url("${elem.images[0].image}")`,
                   }}
                 >
-                  <div
-                    className={`absolute px-[30px] w-full flex justify-between bottom-[30px]`}
-                  >
+                  <div className={`portfolio-image`}>
                     <div className="flex flex-col gap-[6px] text-my-white font-normal">
-                      <div className="uppercase text-[10px]"></div>
-                      <div className="text-[30px]">{elem?.title}</div>
+                      <div className="uppercase text-[8px] mini:text-[10px]"></div>
+                      <div className="text-[20px] mini:text-[30px]">
+                        {elem?.title}
+                      </div>
                     </div>
                     <button
                       onClick={() => openModal(elem)}
                       className="flex items-center self-end gap-[12px] text-[18px] text-my-grey"
                     >
-                      <span className="pad:hidden mac:inline">Подробнее </span>
+                      <span className="text-[16px] mini:text-[18px] pad:hidden mac:inline">
+                        Подробнее{" "}
+                      </span>
                       <svg
                         width="10"
                         height="16"
