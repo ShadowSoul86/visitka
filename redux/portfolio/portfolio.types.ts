@@ -12,4 +12,5 @@ export type portfolioCard = {
       image: string;
     }
   ];
+  type: string;
 };

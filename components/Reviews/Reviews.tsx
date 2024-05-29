@@ -2,10 +2,11 @@ import Image from "next/image";
 import { FC } from "react";
 import { useReviews } from "@/hooks/useReviews";
 import Carousel from "../utils/Carousel";
+import Review from "./Review";
 
 const Reviews: FC = () => {
   const { curr, loadedStatus, slides, tapNext, tapPrev } = useReviews();
-  
+
   return (
     <div className="flex flex-col gap-[35px]">
       <h2 id="reviews" className={`font-sans default-h2`}>
@@ -16,40 +17,7 @@ const Reviews: FC = () => {
           <div>
             <Carousel curr={curr}>
               {slides?.map((s) => (
-                <div
-                  className="min-w-full h-full flex justify-between"
-                  key={s?.id}
-                >
-                  <div className="w-full flex flex-col gap-5 max-w-[327px] pad:max-w-[442px] mac:max-w-[741px] full:max-w-[870px]">
-                    <div className="flex flex-col gap-[5px]">
-                      <div
-                        className={`text-[16px] pad:text-[18px] full:text-[20px]`}
-                      >
-                        {s?.fio}
-                      </div>
-                      <div
-                        className={`text-[14px] pad:text-[16px] full:text-[18px] text-my-grey`}
-                      >
-                        {s?.date}
-                      </div>
-                    </div>
-                    <div
-                      className={`text-[18px] pad:text-[20px] mac:text-[22px] full:text-[28px]`}
-                    >
-                      {s?.description}
-                    </div>
-                  </div>
-
-                  <div className="w-[324px] pad:w-[435px] pad:h-[300px] mac:w-[580px] mac:h-[400px] full:w-[652px] full:h-[450px]">
-                    <Image
-                      width={324}
-                      height={223}
-                      src={s?.image}
-                      alt={"отзыв изображение"}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                </div>
+                <Review key={s.id} s={s} />
               ))}
             </Carousel>
           </div>

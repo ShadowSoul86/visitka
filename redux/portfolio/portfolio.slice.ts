@@ -19,13 +19,13 @@ export const portfolioSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getPortfolioList.pending.type, (state) => {
-        state.loadedStatus = true;
+        state.loadedStatus = false;
       })
       .addCase(
         getPortfolioList.fulfilled.type,
         (state, { payload }: PayloadAction<portfolioCard[]>) => {
           state.data = payload;
-          state.loadedStatus = false;
+          state.loadedStatus = true;
         }
       );
   },

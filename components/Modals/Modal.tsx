@@ -5,6 +5,7 @@ import { useAppSelector } from "@/hooks/rtk";
 import { useModalSlides } from "@/hooks/useModalSlides";
 import Carousel from "../utils/Carousel";
 import Item from "./Item";
+import config from "@/config/config";
 
 const Modal: FC<any> = () => {
   const { isOpen, closeModal, modalData } = useModal();
@@ -104,7 +105,7 @@ const Modal: FC<any> = () => {
                   <Image
                     width={400}
                     height={275}
-                    src={s.image}
+                    src={config.serverURL + s.image}
                     alt={"изображение"}
                     className="flex justify-center items-center h-full w-full object-cover"
                   />
