@@ -49,12 +49,13 @@ export default function Home() {
           <Header />
 
           <Image
-            className="bg-img-bg bg-img"
+            className="bg-img"
             width={274}
             height={416}
             src={BgImage}
             alt="bg"
           />
+          <div className="mini:hidden bg-img absolute inset-0 bg-img-bg"></div>
         </header>
 
         <main className="flex flex-col gap-[80px] mini:gap-[140px]">

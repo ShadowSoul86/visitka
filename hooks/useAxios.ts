@@ -11,10 +11,8 @@ const useAxios = async (url: string, params: any, method: string) => {
         "Content-Type": "application/json"
       },
     }).catch(function (error: any) {
-      if (error.response) {
-        if (error.response.data.massage) {
-          return error.response;
-        }
+      if (error.message) {
+        return error.message;
       }
     });
     return response;

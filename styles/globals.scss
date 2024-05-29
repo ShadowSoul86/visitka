@@ -29,6 +29,10 @@ body {
   display: none; /* Для Chrome, Safari и Opera */
 }
 
+.bg-img-bg {
+  background: rgba(38, 28, 21, 0.35);
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -36,23 +40,6 @@ body {
 
   .scrollbar-hide {
     scrollbar-width: none;
-  }
-
-  .bg-img-bg {
-    background: linear-gradient(
-        180deg,
-        rgba(38, 28, 21, 0.4) 0%,
-        rgba(38, 28, 21, 0.15) 10.86%,
-        rgba(38, 28, 21, 0.07) 20.69%,
-        rgba(38, 28, 21, 0) 28.83%
-      ),
-      linear-gradient(
-        360deg,
-        rgba(38, 28, 21, 0.15) 25.73%,
-        rgba(38, 28, 21, 0.4) 50.59%,
-        rgba(38, 28, 21, 0.15) 74.2%,
-        rgba(38, 28, 21, 0) 83.83%
-      );
   }
 }
 
@@ -82,7 +69,7 @@ body {
   }
 
   .bg-img {
-    @apply absolute top-0 right-0 z-[-1] object-cover w-full h-[660px] mini:w-[274px] mini:h-[416px] med:w-[367px] med:h-[482px] pad:w-[482px] pad:h-[593px] megapad:w-[633px] megapad:h-[800px] mac:w-[733px] mac:h-[900px] full:w-[930px] full:h-[1080px];
+    @apply absolute top-0 right-0 z-[-1] object-cover w-full h-[660px] mini:w-[274px] mini:h-[416px] med:w-[367px] med:h-[482px] medium:w-[420px] medium:h-[550px] pad:w-[482px] pad:h-[593px] megapad:w-[633px] megapad:h-[800px] mac:w-[733px] mac:h-[900px] full:w-[930px] full:h-[1080px];
   }
 
   .header {

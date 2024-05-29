@@ -5,9 +5,7 @@ import Carousel from "../utils/Carousel";
 
 const Reviews: FC = () => {
   const { curr, loadedStatus, slides, tapNext, tapPrev } = useReviews();
-
-  console.log("slides---", slides);
-
+  
   return (
     <div className="flex flex-col gap-[35px]">
       <h2 id="reviews" className={`font-sans default-h2`}>

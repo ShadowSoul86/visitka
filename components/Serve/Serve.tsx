@@ -9,14 +9,13 @@ const Serve = () => {
   const [filteredData, setFilteredData] = useState<serveType[]>([]);
   const [visibleCount, setVisibleCount] = useState<number>(5);
 
-  
   useEffect(() => {
     if (loadedStatus) {
       const newFilteredData = data?.filter((elem) =>
         activeTab === "Все" ? true : elem.type === activeTab
     );
       setFilteredData(newFilteredData);
-      setVisibleCount(Math.min(newFilteredData.length, 5));
+      setVisibleCount(Math.min(newFilteredData?.length, 5));
     }
   }, [data, activeTab, loadedStatus]);
   
