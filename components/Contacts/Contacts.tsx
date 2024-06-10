@@ -16,9 +16,9 @@ const Contacts = () => {
           <button className="mini:w-[335px] h-[51px] bg-my-green border-none rounded-md text-[16px] font-semibold text-center">
             <Link
               className="flex justify-center items-center gap-3 font-sans text-[16px]"
-              href={"#"}
+              href={"https://vk.com/id276185676"}
             >
-              Присоединиться{" "}
+              Присоединиться
               <svg
                 width="28"
                 height="18"
@@ -57,19 +57,19 @@ const Contacts = () => {
           <div>
             <h3 className="font-[600] text-my-brown mb-3">Адрес</h3>
             <div>ул. Ленина, 11, Самара</div>
-            <div>hello@gmail.com</div>
-            <div>+ 7 999 555 44 33</div>
+            <div>alena_830106@mail.ru</div>
+            <div>+7 937 208 91 94</div>
           </div>
           <div className="w-full max-w-[78px]">
             <h3 className="font-[600] text-my-brown mb-3">Соцсети</h3>
             <div>
-              <Link href={"#"}>Telegram</Link>
+              <Link href={"http://t.me/Alena_2220"}>Telegram</Link>
             </div>
             <div>
-              <Link href={"#"}>VK</Link>
+              <Link href={"https://vk.com/id276185676"}>VK</Link>
             </div>
             <div>
-              <Link href={"#"}>Viber</Link>
+              <Link href={"https://wa.me/79372089194"}>WhatsApp</Link>
             </div>
           </div>
         </div>
