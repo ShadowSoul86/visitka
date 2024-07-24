@@ -14,7 +14,7 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ elem }) => {
 
   useEffect(() => {
     const img = new Image();
-    const serverImage = `${config.serverURL + elem.images[0].image}`;
+    const serverImage = `${config.serverURL + elem?.images[0]?.image}`;
     const fallbackImage = "/img/nophoto.jpg";
 
     img.onload = () => {

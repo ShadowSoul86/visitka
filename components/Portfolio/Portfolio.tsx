@@ -23,7 +23,7 @@ const Portfolio = () => {
       <div className={`${classes.grid} mt-[18px] mini:mt-0`}>
         {!loadedStatus
           ? "Loading"
-          : data?.map((elem) => <PortfolioItem key={elem.id} elem={elem} />)}
+          : data?.map((elem) => <PortfolioItem key={elem?.id} elem={elem} />)}
       </div>
     </div>
   );
