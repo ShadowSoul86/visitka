@@ -1,14 +1,12 @@
 import { reviewCard } from "@/redux/reviews/reviews.types";
 import Image from "next/image";
-import { FC, useState } from "react";
+import { FC } from "react";
 
 interface ReviewProps {
   s: reviewCard;
 }
 
-const Review: FC<ReviewProps> = ({ s }) => {
-  const [imageSrc, setImageSrc] = useState(s?.image);
-  const fallbackImage = 'img/nophoto.jpg'; 
+const Review: FC<ReviewProps> = ({ s }) => { 
 
   return (
     <div className="min-w-full h-full flex justify-between">
@@ -34,8 +32,7 @@ const Review: FC<ReviewProps> = ({ s }) => {
         <Image
           width={324}
           height={223}
-          src={imageSrc}
-          onError={() => setImageSrc(fallbackImage)}
+          src={s?.image || ""}
           alt={"отзыв изображение"}
           className="h-full w-full object-cover"
         />

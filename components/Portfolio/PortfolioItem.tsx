@@ -9,31 +9,14 @@ interface PortfolioItemProps {
 }
 
 const PortfolioItem: FC<PortfolioItemProps> = ({ elem }) => {
-  const [backgroundImage, setBackgroundImage] = useState("");
   const { openModal } = useActions();
-
-  useEffect(() => {
-    const img = new Image();
-    const serverImage = `${config.serverURL + elem?.images[0]?.image}`;
-    const fallbackImage = "/img/nophoto.jpg";
-
-    img.onload = () => {
-      setBackgroundImage(`url("${serverImage}")`);
-    };
-
-    img.onerror = () => {
-      setBackgroundImage(`url("${fallbackImage}")`);
-    };
-
-    img.src = serverImage;
-  }, []);
 
   return (
     <div
       key={elem.id}
       className={`${classes.grid__item} portfolio-image-container`}
-      style={{
-        backgroundImage,
+      style={elem?.images[0]?.image && {
+        backgroundImage: `url("${config.serverURL + elem?.images[0]?.image}")`,
       }}
     >
       <div className={`portfolio-image`}>
